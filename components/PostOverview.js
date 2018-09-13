@@ -17,7 +17,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    "&:last-child": { paddingBottom: 0 }
+    // "&:last-child": { paddingBottom: 0 }
   },
   hover: {
     "&:hover": {
@@ -44,8 +44,8 @@ export default props => {
     <div className="card-container">
       <div className="card">
         <div className="content" style={styles.content}>
-          <Link href={`/post`}>{title}</Link>
-          <Link href={`/post/`}>阅读更多</Link>
+          <Link href={`/post`}><a>{title}</a></Link>
+          <Link href={`/post/`}><a>Read more</a></Link>
         </div>
       </div>
       <style global jsx>
