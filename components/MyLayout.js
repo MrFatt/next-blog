@@ -4,7 +4,7 @@ import Footer from "./Footer";
 const localStyle = {
   backgroundColor: "rgba(0,0,0,0.01)",
   fontFamily:
-    '"Open Sans", "Microsoft YaHei", "微软雅黑", STXihei,"华文细黑", sans-serif'
+    '"Open Sans", "Roboto", "Microsoft YaHei", "微软雅黑", STXihei,"华文细黑", sans-serif'
 };
 
 const bodyStyle = {

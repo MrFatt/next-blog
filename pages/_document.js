@@ -19,10 +19,14 @@ export default class MyDocument extends Document {
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Oswald"
+            rel="stylesheet"
+          />
           <script src="http://apps.bdimg.com/libs/highlight.js/9.1.0/highlight.min.js" />
           <script>hljs.initHighlightingOnLoad();</script>
         </Head>
-        <body style={{margin:0}}>
+        <body style={{ margin: 0 }}>
           <Main />
           <NextScript />
         </body>
