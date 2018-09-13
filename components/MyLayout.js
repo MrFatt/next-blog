@@ -4,14 +4,14 @@ import Footer from "./Footer";
 const localStyle = {
   backgroundColor: "rgba(0,0,0,0.01)",
   fontFamily:
-    '"Open Sans", "Roboto", "Microsoft YaHei", "微软雅黑", STXihei,"华文细黑", sans-serif'
+    '"Open Sans", "Roboto", "Microsoft YaHei", "微软雅黑", STXihei,"华文细黑", sans-serif',
 };
 
 const bodyStyle = {
-  width: 1000,
+  maxWidth: 1000,
   marginLeft: "auto",
   marginRight: "auto",
-  marginTop: 50
+  marginTop: 50,
 };
 
 const MyLayout = props => (

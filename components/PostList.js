@@ -1,7 +1,7 @@
 import PostOverview from "./PostOverview";
 
 export default props => (
-  <div>
+  <div className="post-list-container">
     <ul>
       {props.list.map((post, index) => (
         <PostOverview key={`post-${index}`} data={post} />
@@ -12,7 +12,6 @@ export default props => (
         padding: 0;
       }
       .card-container {
-        max-width: 1000px;
         box-shadow: 0 2px 1px -2px rgba(0, 0, 0, 0.2);
       }
       .card-container:last-child {

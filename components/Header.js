@@ -2,7 +2,7 @@ import Navigation from "./Navigation";
 
 export default () => {
   return (
-    <div
+    <header
       style={{
         boxShadow: "0 0 1px rgba(0,0,0,0.2)"
       }}
@@ -18,14 +18,15 @@ export default () => {
           paddingBottom: 20
         }}
       >
-        <div>
+        <div style={{display: "flex", alignItems: "center"}}>
           <img
             style={{ maxHeight: 40, borderRadius: 20 }}
             src={`/static/logo.jpeg`}
           />
+          <div style={{display: "inline-block", marginLeft: 10}}>Sae Eleisa Tera Vi</div>
         </div>
         <Navigation />
       </div>
-    </div>
+    </header>
   );
 };

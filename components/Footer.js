@@ -1,5 +1,5 @@
 export default () => (
-  <div>
+  <footer>
     <div className="footer-container">
       <div className="footer-content">
         © 2018 Yingjian Li. Powered by: Next.js
@@ -20,5 +20,5 @@ export default () => (
         }
       `}
     </style>
-  </div>
+  </footer>
 );

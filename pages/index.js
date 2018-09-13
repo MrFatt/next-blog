@@ -1,5 +1,6 @@
 import MyLayout from "../components/MyLayout";
 import PostList from "../components/PostList";
+import SideBar from "../components/SideBar";
 
 export default () => {
   const testPostList = [
@@ -22,11 +23,28 @@ export default () => {
     {
       data: "2018-09-15",
       title: "Post Five"
-    },
+    }
   ];
+
+  const categories = ["Category 1", "Category 2", "Category 4", "Category 5"];
   return (
     <MyLayout>
-      <PostList list={testPostList} />
+      <div className="home-container">
+        <PostList list={testPostList} />
+        <SideBar categories={categories} />
+      </div>
+      <style global jsx>{`
+        .home-container {
+          display: flex;
+          justify-content: space-between;
+        }
+        .post-list-container {
+          flex: 1;
+        }
+        .sidebar-container {
+          width: 200px;
+        }
+      `}</style>
     </MyLayout>
   );
 };
