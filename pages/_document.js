@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
           <script src="http://apps.bdimg.com/libs/highlight.js/9.1.0/highlight.min.js" />
           <script>hljs.initHighlightingOnLoad();</script>
         </Head>
-        <body>
+        <body style={{margin:0}}>
           <Main />
           <NextScript />
         </body>

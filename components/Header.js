@@ -4,18 +4,28 @@ export default () => {
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        maxWidth: 1000,
-        margin: "0 auto"
+        boxShadow: "0 0 1px rgba(0,0,0,0.2)"
       }}
     >
-      <div>
-        <img style={{ maxHeight: 40 }} src={`/static/logo.png`} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          margin: "0 auto",
+          paddingTop: 20,
+          maxWidth: 1000,
+          paddingBottom: 20
+        }}
+      >
+        <div>
+          <img
+            style={{ maxHeight: 40, borderRadius: 20 }}
+            src={`/static/logo.jpeg`}
+          />
+        </div>
+        <Navigation />
       </div>
-      <Navigation />
     </div>
   );
 };
-

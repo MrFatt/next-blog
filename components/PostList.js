@@ -1,0 +1,26 @@
+import PostOverview from "./PostOverview";
+
+export default props => (
+  <div>
+    <ul>
+      {props.list.map((post, index) => (
+        <PostOverview key={`post-${index}`} data={post} />
+      ))}
+    </ul>
+    <style global jsx>{`
+      ul {
+        padding: 0;
+      }
+      .card-container {
+        max-width: 1000px;
+        box-shadow: 0 2px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      .card-container:last-child {
+        box-shadow: 0 2px 1px -2px rgba(0, 0, 0, 0);
+      }
+      li {
+        list-style: none;
+      }
+    `}</style>
+  </div>
+);
