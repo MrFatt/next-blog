@@ -4,7 +4,8 @@ export default () => {
   return (
     <header
       style={{
-        boxShadow: "0 0 1px rgba(0,0,0,0.2)"
+        boxShadow: "0 0 1px rgba(0,0,0,0.2)",
+        flex: "0 0 auto"
       }}
     >
       <div

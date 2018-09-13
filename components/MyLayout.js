@@ -5,20 +5,28 @@ const localStyle = {
   backgroundColor: "rgba(0,0,0,0.01)",
   fontFamily:
     '"Open Sans", "Roboto", "Microsoft YaHei", "微软雅黑", STXihei,"华文细黑", sans-serif',
-};
-
-const bodyStyle = {
-  maxWidth: 1000,
-  marginLeft: "auto",
-  marginRight: "auto",
-  marginTop: 50,
+  display: "flex",
+  flexDirection: "column",
+  height: "100%"
 };
 
 const MyLayout = props => (
   <div style={localStyle}>
     <Header />
-    <div style={bodyStyle}>{props.children}</div>
+    <div className="content-container">
+      <div className="content">{props.children}</div>
+    </div>
     <Footer />
+    <style jsx>{`
+      .content-container {
+        margin-top: 50;
+        flex: 1 0 auto;
+      }
+      .content {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+    `}</style>
   </div>
 );
 

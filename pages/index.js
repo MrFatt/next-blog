@@ -37,9 +37,10 @@ export default () => {
         .home-container {
           display: flex;
           justify-content: space-between;
+          margin-top: 20px;
         }
         .post-list-container {
-          flex: 1;
+          flex: 1 auto;
         }
         .sidebar-container {
           width: 200px;

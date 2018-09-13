@@ -38,7 +38,6 @@ export default props => {
         {`
           .card {
             display: flex;
-            margin-top: 20px;
             padding-top: 10px;
             padding-bottom: 50px;
             height: 100px;

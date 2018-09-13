@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html style={{height: "100%"}}>
         <Head>
           <title>Next-Blog</title>
           <link
@@ -26,10 +26,20 @@ export default class MyDocument extends Document {
           <script src="http://apps.bdimg.com/libs/highlight.js/9.1.0/highlight.min.js" />
           <script>hljs.initHighlightingOnLoad();</script>
         </Head>
-        <body style={{ margin: 0 }}>
+        <body>
           <Main />
           <NextScript />
         </body>
+        <style global jsx>{`
+          body {
+            height: 100%;
+            margin: 0;
+          }
+
+          div#__next {
+            height: 100%;
+          }
+        `}</style>
       </html>
     );
   }
