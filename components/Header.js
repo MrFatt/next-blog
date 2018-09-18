@@ -19,12 +19,17 @@ export default () => {
           paddingBottom: 20
         }}
       >
-        <div style={{display: "flex", alignItems: "center"}}>
-          <img
-            style={{ maxHeight: 40, borderRadius: 20 }}
-            src={`/static/logo.jpeg`}
-          />
-          <div style={{display: "inline-block", marginLeft: 10}}>Sae Eleisa Tera Vi</div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div
+            style={{
+              display: "inline-block",
+              fontWeight: "bold",
+              fontSize: 24,
+              fontFamily: `"Oswald", sans-serif`
+            }}
+          >
+            Star Boy
+          </div>
         </div>
         <Navigation />
       </div>
