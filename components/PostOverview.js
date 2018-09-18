@@ -19,16 +19,19 @@ const styles = {
 
 export default props => {
   const {
-    data: { title }
+    data: { title, content }
   } = props;
 
   return (
     <div className="card-container">
       <div className="card">
-        <div className="content" style={styles.content}>
+        <div className="post-overview" style={styles.content}>
           <Link href={`/post`}>
             <a>{title}</a>
           </Link>
+          <div className="post-content">
+            {content}
+          </div>
           <Link href={`/post/`}>
             <a>Read more</a>
           </Link>
@@ -43,12 +46,15 @@ export default props => {
             height: 100px;
             width: 100%;
           }
-          .content {
+          .post-overview {
             padding-top: 0;
             padding-bottom: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+          }
+          .post-content {
+            height: 5px;
           }
           a:hover {
             color: blue;
