@@ -26,7 +26,13 @@ export default () => {
     }
   ];
 
-  const categories = ["Category 1", "Category 2", "Category 4", "Category 5"];
+  const categories = [
+    { name: "Category1", count: 3 },
+    { name: "Category2", count: 2 },
+    { name: "Category3", count: 4 },
+    { name: "Category4", count: 1 },
+    { name: "Category5", count: 6 },
+  ];
   return (
     <MyLayout>
       <div className="home-container">
