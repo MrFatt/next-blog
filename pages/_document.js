@@ -26,16 +26,11 @@ export default class MyDocument extends Document {
           <script src="http://apps.bdimg.com/libs/highlight.js/9.1.0/highlight.min.js" />
           <script>hljs.initHighlightingOnLoad();</script>
         </Head>
-        <body>
-          <Main />
+        <body style={{height:'100%',margin:0}}>
+          <Main style={{height:'100%'}} />
           <NextScript />
         </body>
         <style global jsx>{`
-          body {
-            height: 100%;
-            margin: 0;
-          }
-
           div#__next {
             height: 100%;
           }

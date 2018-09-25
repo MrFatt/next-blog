@@ -1,6 +1,12 @@
 
 module.exports = {
 
+  exportPathMap: () => {
+    return {
+      "/": { page: "/page" },
+      "/about": { page: "/about" },
+    };
+  },
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');

@@ -1,13 +1,15 @@
 {
   "scripts": {
     "dev": "next dev",
-    "test": "jest"
+    "build": "next build",
+    "export": "next export"
   },
   "dependencies": {
     "next": "^6.1.2",
     "prettier": "^1.14.2",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "react-dom": "^16.5.0",
+    "serve": "^10.0.2"
   },
   "devDependencies": {
     "babel-jest": "^23.6.0"
