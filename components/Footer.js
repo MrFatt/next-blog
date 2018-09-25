@@ -13,6 +13,7 @@ export default () => (
       {`
         .footer-container {
           height: 40px;
+          margin-top: 40px;
           background-color: black;
         }
         .footer-content {
