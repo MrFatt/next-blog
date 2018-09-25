@@ -8,12 +8,12 @@ export default props => (
     ))}
     <style jsx>{`
       .sidebar-title {
-        padding: 0 0 10px 7px;
+        padding-bottom: 10px;
         font-size: large;
         box-shadow: 0 2px 1px -2px rgba(0, 0, 0, 0.2);
       }
       .sidebar-category {
-        padding: 10px 0 0 7px;
+        padding-top: 10px;
       }
     `}</style>
   </div>

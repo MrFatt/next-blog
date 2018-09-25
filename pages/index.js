@@ -62,9 +62,11 @@ export default () => {
         }
         .post-list-container {
           flex: 1 auto;
+          margin-right:100px;
         }
         .sidebar-container {
-          width: 200px;
+          width: 300px;
+          margin-right: 30px;
         }
       `}</style>
     </MyLayout>

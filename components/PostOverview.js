@@ -27,13 +27,11 @@ export default props => {
       <div className="card">
         <div className="post-overview" style={styles.content}>
           <Link href={`/post`}>
-            <a>{title}</a>
+            <a className="post-title">{title}</a>
           </Link>
-          <div className="post-content">
-            {content}
-          </div>
+          <div className="post-content">{content}</div>
           <Link href={`/post/`}>
-            <a>Read more</a>
+            <a className="read-more">Read more</a>
           </Link>
         </div>
       </div>
@@ -42,9 +40,10 @@ export default props => {
           .card {
             display: flex;
             padding-top: 10px;
-            padding-bottom: 50px;
-            height: 100px;
+            padding-bottom: 15px;
+            height: 200px;
             width: 100%;
+            margin-right: 40px;
           }
           .post-overview {
             padding-top: 0;
@@ -54,7 +53,17 @@ export default props => {
             justify-content: space-between;
           }
           .post-content {
-            height: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+          }
+          .post-title {
+            font-size: 24px;
+          }
+          .read-more {
+            font-size: 12px;
           }
           a:hover {
             color: blue;
