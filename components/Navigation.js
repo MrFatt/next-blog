@@ -12,7 +12,7 @@ const Navigation = () => {
       <Link href={`/about`}>
         <a>About</a>
       </Link>
-      <style global jsx>{`
+      <style jsx>{`
         a {
           margin-right: 30px;
           font-size: 20px;

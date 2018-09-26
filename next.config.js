@@ -1,10 +1,15 @@
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
-
   exportPathMap: () => {
+
+    console.log(path.resolve(__dirname,'posts/test'));
+    const testPost = fs.readFileSync(path.resolve(__dirname,'posts/test.md'),'utf-8');
     return {
       "/": { page: "/page" },
       "/about": { page: "/about" },
+      "/post/test": { page: "/post", query: { content:testPost} }
     };
   },
   webpack: (config, { dev }) => {
@@ -21,4 +26,4 @@ module.exports = {
     // Important: return the modified config
     return config;
   }
-}
+};
