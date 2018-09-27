@@ -4,7 +4,6 @@ const path = require('path');
 module.exports = {
   exportPathMap: () => {
 
-    console.log(path.resolve(__dirname,'posts/test'));
     const testPost = fs.readFileSync(path.resolve(__dirname,'posts/test.md'),'utf-8');
     return {
       "/": { page: "/page" },

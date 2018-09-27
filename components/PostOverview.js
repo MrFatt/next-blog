@@ -35,7 +35,7 @@ export default props => {
           </Link>
         </div>
       </div>
-      <style global jsx>
+      <style jsx>
         {`
           .card {
             display: flex;
@@ -64,6 +64,11 @@ export default props => {
           }
           .read-more {
             font-size: 12px;
+          }
+          a {
+            text-decoration: none;
+            cursor: pointer;
+            color: rgba(0, 0, 0, 0.7);
           }
           a:hover {
             color: blue;
