@@ -42,11 +42,11 @@ export default () => {
   ];
 
   const categories = [
-    { name: "Category1", count: 3 },
-    { name: "Category2", count: 2 },
-    { name: "Category3", count: 4 },
-    { name: "Category4", count: 1 },
-    { name: "Category5", count: 6 },
+    { name: "类别1", count: 3 },
+    { name: "类别2", count: 2 },
+    { name: "类别3", count: 4 },
+    { name: "类别4", count: 1 },
+    { name: "类别5", count: 6 },
   ];
   return (
     <MyLayout>
@@ -65,8 +65,7 @@ export default () => {
           margin-right:100px;
         }
         .sidebar-container {
-          width: 300px;
-          margin-right: 30px;
+          min-width: 150px;
         }
       `}</style>
     </MyLayout>

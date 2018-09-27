@@ -1,6 +1,6 @@
 export default props => (
   <div className="sidebar-container">
-    <div className="sidebar-title">Categories:</div>
+    <div className="sidebar-title">分类:</div>
     {props.categories.map((category, index) => (
       <div className="sidebar-category" key={`category-${index}`}>
         {`${category.name}(${category.count})`}
