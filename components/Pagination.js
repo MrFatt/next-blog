@@ -8,7 +8,7 @@ export default props => {
   return (
     <div>
       {paginationArray.map(i => (
-        <Link>
+        <Link href=''>
           <a className="page-number">{i}</a>
         </Link>
       ))}

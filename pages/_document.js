@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:300,400,500"
           />
           <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"
             rel="stylesheet"
           />
           <link

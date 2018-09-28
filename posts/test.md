@@ -1,7 +1,3 @@
-* 原文地址：https://daveceddia.com/context-api-vs-redux/#how-to-use-the-react-context-api
-* 译文出自：TWNTF
-* 译者：Yingjian Li
-
 
 # 对比 Redux 和 Context API
 
@@ -681,3 +677,7 @@ ReactDOM.render(
 Context 完全不会「取代」Redux，就像 React 无法「取代」 Angular 或 jQuery。当我需要很快完成一些事情时，我还是会使用 jQuery。我有时还会使用服务器端渲染的 EJS 模板而不是启动一个完整的 React app。有时你的任务完全不需要 React 或 Redux 来完成。
 
 如今，当 Redux 的功能超过了你所需要的， 你可以选择 Context。
+
+* 原文地址：https://daveceddia.com/context-api-vs-redux/#how-to-use-the-react-context-api
+* 译文出自：TWNTF
+* 译者：Yingjian Li

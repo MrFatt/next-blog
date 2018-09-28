@@ -34,7 +34,7 @@ export default props => {
       <style global jsx>
         {`
           img {
-            max-width: 1000px;
+            max-width: 900px;
           }
 
           blockquote {
