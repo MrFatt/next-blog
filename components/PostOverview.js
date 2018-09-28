@@ -57,6 +57,7 @@ export default props => {
             text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-line-clamp: 5;
+            white-space: pre-wrap;
             -webkit-box-orient: vertical;
           }
           .post-title {
