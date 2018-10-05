@@ -1,5 +1,5 @@
 
-# Airbnb 的 React Native 实践： 技术细节
+# [翻译]Airbnb 的 React Native 实践： 技术细节
 
 > 一些技术上的细节
 

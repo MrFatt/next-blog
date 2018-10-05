@@ -1,5 +1,5 @@
 
-# Airbnb 的 React Native 实践： 弃用 React Native
+# [翻译]Airbnb 的 React Native 实践： 弃用 React Native
 
 > 由于大量的技术和组织问题,我们将弃用 React Native,并且今后将使用 Native 进行开发.
 

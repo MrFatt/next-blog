@@ -5,22 +5,15 @@ const markdownIt = require("markdown-it");
 module.exports = {
   exportPathMap: () => {
     const titles = fs.readdirSync(path.resolve(__dirname, "posts/"), "utf-8");
-    const posts = titles.map(title => {
-      const content = fs.readFileSync(
-        path.resolve(__dirname, `posts/${title}`),
-        "utf-8"
-      );
-      return {
-        title: title.slice(0, title.length - 3),
-        content: content
-      };
-    });
+    const posts = titles.map(title => ({
+      title: title.slice(0, title.length - 3)
+    }));
 
-    const routes = posts.reduce((acc, { title, content }) => {
+    const routes = posts.reduce((acc, { title }) => {
       Object.assign({}, acc, {
         [`/post/${title}`]: {
           page: "/post",
-          query: { content: content }
+          query: { title }
         }
       });
     }, {});

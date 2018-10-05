@@ -1,5 +1,5 @@
 
-# Airbnb 的 React Native 实践： 移动端发展计划
+# [翻译]Airbnb 的 React Native 实践： 移动端发展计划
 
 > 整装待发,重回原生
 

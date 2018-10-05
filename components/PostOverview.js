@@ -22,13 +22,15 @@ export default props => {
     data: { title, content }
   } = props;
 
+  const postName = /#(.*)/g.exec(content)[1];
+
   const parse = content => {
     return content
       .slice(0, 900)
-      .replace(/#.*/g, "")
+      .replace(/#(.*)/g, "")
       .replace(/!?\[(.*?)\]\((.*?)\)/g, (match, text) => text)
       .replace(/[\n#_>\[\]]/g, "")
-      .replace(/\(http.*/,"")
+      .replace(/\(http.*/, "")
       .trim();
   };
 
@@ -36,8 +38,8 @@ export default props => {
     <div className="card-container">
       <div className="card">
         <div className="post-overview" style={styles.content}>
-          <Link href={`/post`}>
-            <a className="post-title">{title}</a>
+          <Link href={`/post?title=${title}`}>
+            <a className="post-title">{postName}</a>
           </Link>
           <div className="post-content">{parse(content)}</div>
           <Link href={`/post/`}>

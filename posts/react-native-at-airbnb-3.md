@@ -1,5 +1,5 @@
 
-# Airbnb 的 React Native 实践： 构建一个跨平台的移动端团队
+# [翻译]Airbnb 的 React Native 实践： 构建一个跨平台的移动端团队
 
 > React Native 转型
 
