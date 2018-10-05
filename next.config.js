@@ -12,7 +12,7 @@ module.exports = {
       );
       return {
         title: title.slice(0, title.length - 3),
-        content: content,
+        content: content
       };
     });
 
@@ -41,6 +41,10 @@ module.exports = {
         rule.options.cacheDirectory = false;
       }
       return rule;
+    });
+    config.module.rules.push({
+      test: [/\.md$/],
+      loader: require.resolve("raw-loader")
     });
     // Important: return the modified config
     return config;

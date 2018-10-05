@@ -22,6 +22,16 @@ export default props => {
     data: { title, content }
   } = props;
 
+  const parse = content => {
+    return content
+      .slice(0, 900)
+      .replace(/#.*/g, "")
+      .replace(/!?\[(.*?)\]\((.*?)\)/g, (match, text) => text)
+      .replace(/[\n#_>\[\]]/g, "")
+      .replace(/\(http.*/,"")
+      .trim();
+  };
+
   return (
     <div className="card-container">
       <div className="card">
@@ -29,7 +39,7 @@ export default props => {
           <Link href={`/post`}>
             <a className="post-title">{title}</a>
           </Link>
-          <div className="post-content">{content}</div>
+          <div className="post-content">{parse(content)}</div>
           <Link href={`/post/`}>
             <a className="read-more">Read more</a>
           </Link>
@@ -54,6 +64,7 @@ export default props => {
           }
           .post-content {
             overflow: hidden;
+            line-height: 23px;
             text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-line-clamp: 5;

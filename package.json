@@ -15,6 +15,7 @@
     "serve": "^10.0.2"
   },
   "devDependencies": {
-    "babel-jest": "^23.6.0"
+    "babel-jest": "^23.6.0",
+    "raw-loader": "^0.5.1"
   }
 }

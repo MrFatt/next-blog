@@ -1,4 +1,5 @@
 import MyLayout from "../components/MyLayout";
+import content from '../posts/[翻译]对比 Redux 和 Context API.md';
 
 const markdownIt = require("markdown-it");
 const hljs = require("highlight.js");
@@ -6,7 +7,7 @@ const hljs = require("highlight.js");
 export default props => {
   const {
     url: {
-      query: { content }
+      // query: { content }
     },
     meta
   } = props;
