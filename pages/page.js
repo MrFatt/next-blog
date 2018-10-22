@@ -11,7 +11,7 @@ export default class Page extends Component {
 
   static async getInitialProps(props) {
     const posts = await Promise.all(
-      props.query.posts.map(async ({ title }) => {
+      summary.titles.map(async title => {
         const post = await import(`../posts/${title}.md`);
         return { title: title, content: post.default };
       })

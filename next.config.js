@@ -1,15 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const markdownIt = require("markdown-it");
-
+const summary = require("./summary.json");
 module.exports = {
   exportPathMap: () => {
-    const titles = fs.readdirSync(path.resolve(__dirname, "posts/"), "utf-8");
-    const posts = titles.map(title => ({
-      title: title.slice(0, title.length - 3)
-    }));
-
-    const routes = posts.reduce((acc, { title }) => {
+    const routes = summary.titles.reduce((acc, title) => {
       Object.assign({}, acc, {
         [`/post/${title}`]: {
           page: "/post",
@@ -19,7 +13,7 @@ module.exports = {
     }, {});
 
     return {
-      "/": { page: "/page", query: { posts: posts } },
+      "/": { page: "/page" },
       "/about": { page: "/about" },
       ...routes
     };
@@ -35,12 +29,10 @@ module.exports = {
       }
       return rule;
     });
-    config.module.rules.push(
-      {
-        test: [/\.md$/],
-        loader: require.resolve("raw-loader")
-      },
-    );
+    config.module.rules.push({
+      test: [/\.md$/],
+      loader: require.resolve("raw-loader")
+    });
     // Important: return the modified config
     return config;
   }
