@@ -35,10 +35,12 @@ module.exports = {
       }
       return rule;
     });
-    config.module.rules.push({
-      test: [/\.md$/],
-      loader: require.resolve("raw-loader")
-    });
+    config.module.rules.push(
+      {
+        test: [/\.md$/],
+        loader: require.resolve("raw-loader")
+      },
+    );
     // Important: return the modified config
     return config;
   }

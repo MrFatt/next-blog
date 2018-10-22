@@ -2,6 +2,7 @@ import MyLayout from "../components/MyLayout";
 import PostList from "../components/PostList";
 import SideBar from "../components/SideBar";
 import { Component } from "react";
+import summary from "../summary.json";
 
 export default class Page extends Component {
   constructor() {
@@ -15,7 +16,7 @@ export default class Page extends Component {
         return { title: title, content: post.default };
       })
     );
-    return { posts };
+    return { posts, summary: summary };
   }
 
   render() {

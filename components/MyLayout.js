@@ -9,9 +9,11 @@ const MyLayout = props => (
     </div>
     <Footer />
     <style jsx>{`
-      font-family: "Open Sans", "Roboto", "Microsoft YaHei", "微软雅黑", STXihei,"华文细黑", sans-serif;
+      font-family: "Open Sans", "Roboto", "Microsoft YaHei", "微软雅黑", STXihei,
+        "华文细黑", sans-serif;
       display: flex;
       flex-direction: column;
+      height: auto;
       .content-container {
         margin-top: 50;
         flex: 1 0 auto;
@@ -19,6 +21,8 @@ const MyLayout = props => (
       .content {
         margin: 0 auto;
         max-width: 1000px;
+        height:100%;
+        min-height:650px;
       }
     `}</style>
   </div>
