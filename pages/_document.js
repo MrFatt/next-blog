@@ -10,7 +10,6 @@ export default class MyDocument extends Document {
     return (
       <html style={{height: "100%"}}>
         <Head>
-          <title>Next-Blog</title>
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:300,400,500"
