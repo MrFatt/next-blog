@@ -3,7 +3,7 @@ import Link from "next/link";
 const Navigation = () => {
   return (
     <div>
-      <Link href={`/`}>
+      <Link as="/" href="/page?cur=1">
         <a>Home</a>
       </Link>
       <Link href={`/archives`}>
