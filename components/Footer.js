@@ -6,7 +6,11 @@ export default () => (
   >
     <div className="footer-container">
       <div className="footer-content">
-        © 2018 Yingjian Li. Powered by: Next.js
+        © 2018 Yingjian Li. Powered by:
+        <a href="https://nextjs.org/">Next.js</a>. Inspired by
+        <a href="https://github.com/frostfan/hexo-theme-polarbears">
+          Polar Bear
+        </a>
       </div>
     </div>
     <style jsx>
@@ -22,6 +26,10 @@ export default () => (
           font-family: "Oswald", sans-serif;
           margin: 10px auto;
           line-height: 1.5;
+        }
+        a {
+          margin-left: 5px;
+          color: white;
         }
       `}
     </style>
