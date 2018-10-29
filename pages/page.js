@@ -1,17 +1,23 @@
+import { Component } from "react";
+import { withRouter } from "next/router";
+
 import MyLayout from "../components/MyLayout";
 import PostList from "../components/PostList";
 import SideBar from "../components/SideBar";
-import { Component } from "react";
+import Pagination from "../components/Pagination";
 import summary from "../summary.json";
 
-export default class Page extends Component {
+class Page extends Component {
   constructor() {
     super(...arguments);
   }
 
   static async getInitialProps(props) {
+    const {
+      query: { cur = 1 }
+    } = props;
     const posts = await Promise.all(
-      summary.titles.map(async title => {
+      summary.posts.slice((cur - 1) * 5, cur * 5).map(async title => {
         const post = await import(`../posts/${title}.md`);
         return { title: title, content: post.default };
       })
@@ -28,10 +34,15 @@ export default class Page extends Component {
       { name: "类别5", count: 6 }
     ];
 
+    const { posts, cur } = this.props;
+
     return (
       <MyLayout>
         <div className="home-container">
-          <PostList list={this.props.posts} />
+          <div className="content-with-pagination">
+            <PostList list={posts} />
+            <Pagination pageCount={Math.ceil(summary.posts.length / 5)} currentPage={cur} />
+          </div>
           <SideBar categories={categories} />
         </div>
         <style global jsx>{`
@@ -40,9 +51,11 @@ export default class Page extends Component {
             justify-content: space-between;
             margin-top: 20px;
           }
+          .content-with-pagination {
+            margin-right: 100px;
+          }
           .post-list-container {
             flex: 1 auto;
-            margin-right: 100px;
           }
           .sidebar-container {
             min-width: 150px;
@@ -52,3 +65,5 @@ export default class Page extends Component {
     );
   }
 }
+
+export default withRouter(Page);

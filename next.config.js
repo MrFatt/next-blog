@@ -1,9 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 const summary = require("./summary.json");
+
 module.exports = {
   exportPathMap: () => {
-    const routes = summary.titles.reduce((acc, title) => {
+    const postRoutes = summary.posts.reduce((acc, title) => {
       Object.assign({}, acc, {
         [`/post/${title}`]: {
           page: "/post",
@@ -12,10 +13,24 @@ module.exports = {
       });
     }, {});
 
+    const pageCount = Math.ceil(summary.posts.length / 5);
+    const pageRouters = Array.from(Array(pageCount).keys(), x => x + 1).reduce(
+      (acc, cur) => {
+        Object.assign({}, acc, {
+          [`page/${cur}`]: {
+            page: "/page",
+            query: { cur, pageCount }
+          }
+        });
+      },
+      {}
+    );
+
     return {
-      "/": { page: "/page" },
+      "/": { page: "/page", query: { cur: 1, pageCount} },
       "/about": { page: "/about" },
-      ...routes
+      ...postRoutes,
+      ...pageRouters
     };
   },
   webpack: (config, { dev }) => {

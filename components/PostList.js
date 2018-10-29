@@ -1,5 +1,4 @@
 import PostOverview from "./PostOverview";
-import Pagination from "./Pagination";
 
 export default props => (
   <div className="post-list-container">
@@ -8,7 +7,6 @@ export default props => (
         <PostOverview key={`post-${index}`} data={post} />
       ))}
     </ul>
-    <Pagination/>
     <style global jsx>{`
       ul {
         padding: 0;

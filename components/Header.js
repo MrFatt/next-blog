@@ -6,7 +6,7 @@ export default () => {
     <header>
       <div className="header-container">
         <div className="slogan">
-          <Link href="/">
+          <Link as="/" href="/page?cur=1">
             <a>Star Boy</a>
           </Link>
         </div>
