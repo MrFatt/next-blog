@@ -8,7 +8,7 @@ export default () => (
       <div className="footer-content">
         © 2018 Yingjian Li. Powered by:
         <a href="https://nextjs.org/">Next.js</a>. Inspired by
-        <a href="https://github.com/frostfan/hexo-theme-polarbears">
+        <a href="https://github.com/frostfan/hexo-theme-polarbear">
           Polar Bear
         </a>
       </div>
