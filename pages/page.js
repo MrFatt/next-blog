@@ -17,7 +17,7 @@ class Page extends Component {
       query: { cur = 1 }
     } = props;
     const posts = await Promise.all(
-      summary.posts.slice((cur - 1) * 5, cur * 5).map(async title => {
+      summary.posts.slice((cur - 1) * 5, cur * 5).map(async ({ title }) => {
         const post = await import(`../posts/${title}.md`);
         return { title: title, content: post.default };
       })
@@ -26,7 +26,7 @@ class Page extends Component {
   }
 
   render() {
-    const {tags} = summary;
+    const { tags } = summary;
 
     const {
       posts,

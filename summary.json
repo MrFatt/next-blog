@@ -1,11 +1,11 @@
 {
   "posts": [
-    "react-native-at-airbnb-1",
-    "react-native-at-airbnb-2",
-    "react-native-at-airbnb-3",
-    "react-native-at-airbnb-4",
-    "react-native-at-airbnb-5",
-    "redux-vs-context-api"
+    { "title": "react-native-at-airbnb-1", "tag": "React-Native" },
+    { "title": "react-native-at-airbnb-2", "tag": "React-Native" },
+    { "title": "react-native-at-airbnb-3", "tag": "React-Native" },
+    { "title": "react-native-at-airbnb-4", "tag": "React-Native" },
+    { "title": "react-native-at-airbnb-5", "tag": "React-Native" },
+    { "title": "redux-vs-context-api", "tag": "Redux" }
   ],
   "tags": [
     {
