@@ -26,24 +26,26 @@ class Page extends Component {
   }
 
   render() {
-    const categories = [
-      { name: "类别1", count: 3 },
-      { name: "类别2", count: 2 },
-      { name: "类别3", count: 4 },
-      { name: "类别4", count: 1 },
-      { name: "类别5", count: 6 }
-    ];
+    const {tags} = summary;
 
-    const { posts, cur } = this.props;
+    const {
+      posts,
+      router: {
+        query: { cur }
+      }
+    } = this.props;
 
     return (
       <MyLayout>
         <div className="home-container">
           <div className="content-with-pagination">
             <PostList list={posts} />
-            <Pagination pageCount={Math.ceil(summary.posts.length / 5)} currentPage={cur} />
+            <Pagination
+              pageCount={Math.ceil(summary.posts.length / 5)}
+              currentPage={cur}
+            />
           </div>
-          <SideBar categories={categories} />
+          <SideBar tags={tags} />
         </div>
         <style global jsx>{`
           .home-container {

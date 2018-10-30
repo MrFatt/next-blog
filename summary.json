@@ -6,5 +6,15 @@
     "react-native-at-airbnb-4",
     "react-native-at-airbnb-5",
     "redux-vs-context-api"
+  ],
+  "tags": [
+    {
+      "name": "React-Native",
+      "count": 5
+    },
+    {
+      "name": "Redux",
+      "count": 1
+    }
   ]
 }
