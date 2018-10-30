@@ -6,9 +6,6 @@ const Navigation = () => {
       <Link as="/" href="/page?cur=1">
         <a>Home</a>
       </Link>
-      <Link href={`/archives`}>
-        <a>Archives</a>
-      </Link>
       <Link href={`/about`}>
         <a>About</a>
       </Link>
