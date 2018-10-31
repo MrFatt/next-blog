@@ -14,15 +14,18 @@ class Page extends Component {
 
   static async getInitialProps(props) {
     const {
-      query: { cur = 1 }
+      query: { cur = 1, tag }
     } = props;
+    const filteredPosts = tag
+      ? summary.posts.filter(post => post.tag === tag)
+      : summary.posts;
     const posts = await Promise.all(
-      summary.posts.slice((cur - 1) * 5, cur * 5).map(async ({ title }) => {
+      filteredPosts.slice((cur - 1) * 5, cur * 5).map(async ({ title }) => {
         const post = await import(`../posts/${title}.md`);
         return { title: title, content: post.default };
       })
     );
-    return { posts, summary: summary };
+    return { posts, filteredPosts};
   }
 
   render() {
@@ -30,6 +33,7 @@ class Page extends Component {
 
     const {
       posts,
+      filteredPosts,
       router: {
         query: { cur }
       }
@@ -41,7 +45,7 @@ class Page extends Component {
           <div className="content-with-pagination">
             <PostList list={posts} />
             <Pagination
-              pageCount={Math.ceil(summary.posts.length / 5)}
+              pageCount={Math.ceil(filteredPosts.length / 5)}
               currentPage={cur}
             />
           </div>
