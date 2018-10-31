@@ -38,11 +38,11 @@ export default props => {
     <div className="card-container">
       <div className="card">
         <div className="post-overview" style={styles.content}>
-          <Link href={`/post?title=${title}`}>
+          <Link href={`/post/${title}`}>
             <a className="post-title">{postName}</a>
           </Link>
           <div className="post-content">{parse(content)}</div>
-          <Link href={`/post/`}>
+          <Link href={`/post/${title}`}>
             <a className="read-more">Read more</a>
           </Link>
         </div>

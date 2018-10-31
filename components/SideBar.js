@@ -1,9 +1,13 @@
+import Link from "next/link";
+
 export default props => (
   <div className="sidebar-container">
     <div className="sidebar-title">Tags:</div>
     {props.tags.map((tag, index) => (
       <div className="sidebar-tag" key={`tag-${index}`}>
-        {`${tag.name}  (${tag.count})`}
+        <Link href={`/page/${tag.name}`}>
+          <a>{`${tag.name}  (${tag.count})`}</a>
+        </Link>
       </div>
     ))}
     <style jsx>{`
@@ -14,6 +18,11 @@ export default props => (
       }
       .sidebar-tag {
         padding-top: 10px;
+      }
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.7);
       }
     `}</style>
   </div>
