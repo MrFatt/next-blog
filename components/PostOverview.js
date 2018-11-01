@@ -19,7 +19,7 @@ const styles = {
 
 export default props => {
   const {
-    data: { title, content }
+    data: { key, content }
   } = props;
 
   const postName = /#(.*)/g.exec(content)[1];
@@ -38,11 +38,11 @@ export default props => {
     <div className="card-container">
       <div className="card">
         <div className="post-overview" style={styles.content}>
-          <Link href={`/post/${title}`}>
+          <Link href={`/post/${key}`}>
             <a className="post-title">{postName}</a>
           </Link>
           <div className="post-content">{parse(content)}</div>
-          <Link href={`/post/${title}`}>
+          <Link href={`/post/${key}`}>
             <a className="read-more">Read more</a>
           </Link>
         </div>

@@ -20,9 +20,9 @@ class Page extends Component {
       ? summary.posts.filter(post => post.tag === tag)
       : summary.posts;
     const posts = await Promise.all(
-      filteredPosts.slice((cur - 1) * 5, cur * 5).map(async ({ title }) => {
-        const post = await import(`../posts/${title}.md`);
-        return { title: title, content: post.default };
+      filteredPosts.slice((cur - 1) * 5, cur * 5).map(async ({ key }) => {
+        const post = await import(`../posts/${key}.md`);
+        return { key: key, content: post.default };
       })
     );
     return { posts, filteredPosts};
@@ -52,6 +52,7 @@ class Page extends Component {
           <SideBar tags={tags} />
         </div>
         <style global jsx>{`
+
           .home-container {
             display: flex;
             justify-content: space-between;

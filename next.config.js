@@ -5,11 +5,11 @@ const summary = require("./summary.json");
 module.exports = {
   exportPathMap: () => {
     const postRoutes = summary.posts.reduce(
-      (acc, { title }) =>
+      (acc, { key }) =>
         Object.assign({}, acc, {
-          [`/post/${title}`]: {
+          [`/post/${key}`]: {
             page: "/post",
-            query: { title }
+            query: { key }
           }
         }),
       {}
@@ -31,8 +31,8 @@ module.exports = {
 
     const tagsRouter = tags.reduce((acc, { name }) => 
       Object.assign({}, acc, {
-        [`/page/${name}`]: {
-          page: "/page",
+        [`/tags/${name}`]: {
+          page: "/tags",
           query: { tag: name }
         }
       }), {});

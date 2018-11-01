@@ -11,7 +11,7 @@ class Post extends Component {
   }
 
   static async getInitialProps(props) {
-    const content = await import(`../posts/${props.query.title}.md`)
+    const content = await import(`../posts/${props.query.key}.md`)
 
     return {
       content: content.default
