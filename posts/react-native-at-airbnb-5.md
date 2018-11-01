@@ -111,7 +111,7 @@ override func itemModel(forDataID dataID: DemoDataID) -> EpoxyableModel? {
 
 到目前为止,它已经应用到了大量的页面中,并且几乎完全不需要处理生命周期.我们目前正在一些 Android 产品上进行试验,并且如果一切顺利的话会将他开源.下面是创建一个发出网络请求的功能页面所需的全部代码:
 
-```kotlin
+```Kotlin
 data class SimpleDemoState(val listing: Async<Listing> = Uninitialized)
 
 class SimpleDemoViewModel(override val initialState: SimpleDemoState) : MvRxViewModel<SimpleDemoState>() {

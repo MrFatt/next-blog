@@ -65,7 +65,6 @@ class Post extends Component {
               padding: 0.2em 0.4em;
               margin: 0;
               font-size: 85%;
-              background-color: rgba(27, 31, 35, 0.05);
               border-radius: 3px;
               font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
                 Courier, monospace;
@@ -74,19 +73,12 @@ class Post extends Component {
             pre {
               margin-top: 0;
               margin-bottom: 0;
-              background-color: #f6f8fa;
             }
 
             pre > :global(code) {
-              margin-top: 0;
-              margin-bottom: 0;
-              word-break: normal;
-              overflow: auto;
               font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
                 Courier, monospace;
-              font-size: 85%;
               line-height: 1.45;
-              border-radius: 3px;
             }
           `}
         </style>

@@ -15,14 +15,14 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:300,400,500"
           />
           <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"
-            rel="stylesheet"
-          />
-          <link
             href="https://fonts.googleapis.com/css?family=Oswald"
             rel="stylesheet"
           />
-          <script src="http://apps.bdimg.com/libs/highlight.js/9.1.0/highlight.min.js" />
+          <link
+            href="/static/dracula.css"
+            rel="stylesheet"
+          />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" />
           <script>hljs.initHighlightingOnLoad();</script>
         </Head>
         <body style={{ height: "100%", margin: 0 }}>
