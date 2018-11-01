@@ -11,3 +11,5 @@ export const getPaginations = (pageCount, currentPage) => {
     return Array.from({ length: 10 }, (_, i) => i + currentPage - 5);
   }
 };
+
+export const getTitle = content => /#(.*)/g.exec(content)[1];

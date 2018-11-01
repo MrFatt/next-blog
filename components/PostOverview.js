@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTitle } from "../utils";
 
 const styles = {
   hover: {
@@ -22,7 +23,7 @@ export default props => {
     data: { key, content }
   } = props;
 
-  const postName = /#(.*)/g.exec(content)[1];
+  const postName = getTitle(content);
 
   const parse = content => {
     return content
