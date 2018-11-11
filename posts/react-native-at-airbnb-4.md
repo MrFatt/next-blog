@@ -1,3 +1,6 @@
+| 2 | 3 |
+
+*****
 
 # [翻译]Airbnb 的 React Native 实践： 弃用 React Native
 

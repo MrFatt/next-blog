@@ -1,6 +1,8 @@
-import MyLayout from "../components/MyLayout";
 import { withRouter } from "next/router";
 import { Component } from "react";
+
+import {sanitizePost } from "../utils";
+import MyLayout from "../components/MyLayout";
 
 const markdownIt = require("markdown-it");
 const hljs = require("highlight.js");
@@ -33,7 +35,7 @@ class Post extends Component {
         return ""; // use external default escaping
       }
     };
-    const postHTML = markdownIt(markdownConfig).render(this.props.content);
+    const postHTML = markdownIt(markdownConfig).render(sanitizePost(this.props.content));
 
     return (
       <MyLayout>

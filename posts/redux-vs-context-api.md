@@ -1,3 +1,6 @@
+| 2 | 3 |
+
+*****
 
 # 对比 Redux 和 Context API
 

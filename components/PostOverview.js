@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getTitle } from "../utils";
+import { sanitizePost } from "../utils";
 
 const styles = {
   hover: {
@@ -42,7 +43,7 @@ export default props => {
           <Link href={`/post/${key}`}>
             <a className="post-title">{postName}</a>
           </Link>
-          <div className="post-content">{parse(content)}</div>
+          <div className="post-content">{parse(sanitizePost(content))}</div>
           <Link href={`/post/${key}`}>
             <a className="read-more">Read more</a>
           </Link>
