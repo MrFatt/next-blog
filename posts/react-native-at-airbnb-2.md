@@ -1,6 +1,8 @@
-| 2 | 3 |
+| Date       | Tags         |
+| ---------- | ------------ |
+| 2018-07-19 | React-Native |
 
-*****
+---
 
 # [翻译]Airbnb 的 React Native 实践： 技术细节
 
@@ -26,9 +28,9 @@ React Native 最主要的优点就是代码可以同时在 Android 和 iOS 上�
 
 React 被大家喜爱是有[原因](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools)的,不但操作简单,而且功能强大,扩展性强.React 中我们最喜欢的是:
 
-* **组件**: React 中的组件通过`props`和`state`加强了关注分离,这使得 React 具有可扩展性.
-* **简化的生命周期**: 众所周知, Android 和 iOS(稍好于 Android)上的生命周期是十分复杂的. React 组件跟本地解决了这个问题,这也使得学习 React Native 比学习 Android 和 iOS 简单得多.
-* **声明式**: React 的声明式特性使我们能同步 UI 与 state.
+- **组件**: React 中的组件通过`props`和`state`加强了关注分离,这使得 React 具有可扩展性.
+- **简化的生命周期**: 众所周知, Android 和 iOS(稍好于 Android)上的生命周期是十分复杂的. React 组件跟本地解决了这个问题,这也使得学习 React Native 比学习 Android 和 iOS 简单得多.
+- **声明式**: React 的声明式特性使我们能同步 UI 与 state.
 
 ### 迭代速度
 
@@ -107,9 +109,9 @@ JavaScript 无类型的一个副作用就是重构会变得十分困难,而且�
 
 React Native 一个微妙而棘手的问题是由[JavaScript 核心环境](https://facebook.github.io/react-native/docs/javascript-environment.html)引起的.下面是我们得出的结论:
 
-* iOS 将 JavaScript 核心环境[开箱即用](https://developer.apple.com/documentation/javascriptcore),因此 iOS 具有一致性而且不会出现问题.
-* Android 中没有 JavaScript 核心环境,所以 React Native 需要自己打包,但默认的是[老版本](https://github.com/facebook/react-native/issues/10245). 因此我们必须打包一个[新版本](https://github.com/react-community/jsc-android-buildscripts).
-* 在 Debug 时,React Native 依赖于强大 Chrome 开发者工具.然而在 debug 时,所有的 JavaScript 都运行在 Chrome 的 V8 引擎当中.这在 99.9%的情况下都不会出现问题.但是,我们发现`toLocaleString`在 iOS 和 debug 模式下的 Android 正常运行.事实证明 Android 的 JSC 中不包含该方法,它会默默的失败,除非你是在 debug 模式下.如果没有类似的经验,debug 类似问题将会十分痛苦.
+- iOS 将 JavaScript 核心环境[开箱即用](https://developer.apple.com/documentation/javascriptcore),因此 iOS 具有一致性而且不会出现问题.
+- Android 中没有 JavaScript 核心环境,所以 React Native 需要自己打包,但默认的是[老版本](https://github.com/facebook/react-native/issues/10245). 因此我们必须打包一个[新版本](https://github.com/react-community/jsc-android-buildscripts).
+- 在 Debug 时,React Native 依赖于强大 Chrome 开发者工具.然而在 debug 时,所有的 JavaScript 都运行在 Chrome 的 V8 引擎当中.这在 99.9%的情况下都不会出现问题.但是,我们发现`toLocaleString`在 iOS 和 debug 模式下的 Android 正常运行.事实证明 Android 的 JSC 中不包含该方法,它会默默的失败,除非你是在 debug 模式下.如果没有类似的经验,debug 类似问题将会十分痛苦.
 
 ### React Native 开源库
 
@@ -187,9 +189,6 @@ _这是 Airbnb 关于 React Native 经验分享和移动端未来计划系列文
 
 [第五篇: What's Next for Mobile](../Airbnb%20的%20React%20Native%20实践：%20移动端发展计划/README.md)
 
-
-* 原文地址：https://medium.com/airbnb-engineering/react-native-at-airbnb-the-technology-dafd0b43838
-* 译文出自：TWNTF
-* 译者：Yingjian Li
-
-
+- 原文地址：https://medium.com/airbnb-engineering/react-native-at-airbnb-the-technology-dafd0b43838
+- 译文出自：TWNTF
+- 译者：Yingjian Li

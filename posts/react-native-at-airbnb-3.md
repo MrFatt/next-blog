@@ -1,6 +1,8 @@
-| 2 | 3 |
+| Date       | Tags         |
+| ---------- | ------------ |
+| 2018-07-25 | React-Native |
 
-*****
+---
 
 # [翻译]Airbnb 的 React Native 实践： 构建一个跨平台的移动端团队
 
@@ -79,6 +81,6 @@ _这是 Airbnb 关于 React Native 经验分享和移动端未来计划系列文
 
 [第五篇: What's Next for Mobile](../Airbnb%20的%20React%20Native%20实践：%20移动端发展计划/README.md)
 
-* 原文地址：https://medium.com/airbnb-engineering/building-a-cross-platform-mobile-team-3e1837b40a88
-* 译文出自：TWNTF
-* 译者：Yingjian Li
+- 原文地址：https://medium.com/airbnb-engineering/building-a-cross-platform-mobile-team-3e1837b40a88
+- 译文出自：TWNTF
+- 译者：Yingjian Li

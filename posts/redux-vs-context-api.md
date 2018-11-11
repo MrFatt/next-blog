@@ -1,6 +1,8 @@
-| 2 | 3 |
+| Date       | Tags         |
+| ---------- | ------------ |
+| 2018-07-26 | React-Native |
 
-*****
+---
 
 # 对比 Redux 和 Context API
 
@@ -641,8 +643,7 @@ const Room = () => (
   <RoomContext.Consumer>
     {({ isLit, onToggleLight }) => (
       <div className={`room ${isLit ? "lit" : "dark"}`}>
-        The room is {isLit ? "lit" : "dark"}.
-        <br />
+        The room is {isLit ? "lit" : "dark"}.<br />
         <button onClick={onToggleLight}>Flip</button>
       </div>
     )}
@@ -681,6 +682,6 @@ Context 完全不会「取代」Redux，就像 React 无法「取代」 Angular 
 
 如今，当 Redux 的功能超过了你所需要的， 你可以选择 Context。
 
-* 原文地址：https://daveceddia.com/context-api-vs-redux/#how-to-use-the-react-context-api
-* 译文出自：TWNTF
-* 译者：Yingjian Li
+- 原文地址：https://daveceddia.com/context-api-vs-redux/#how-to-use-the-react-context-api
+- 译文出自：TWNTF
+- 译者：Yingjian Li

@@ -1,6 +1,8 @@
-| 2 | 3 |
+| Date       | Tags         |
+| ---------- | ------------ |
+| 2018-08-11 | React-Native |
 
-*****
+---
 
 # [翻译]Airbnb 的 React Native 实践： 移动端发展计划
 
@@ -20,11 +22,11 @@ _这是我们介绍 React Native 经验和 Airbnb mobile 未来计划[系列博�
 
 大规模服务器端渲染也存在着一些挑战. 下面是我们正在解决的一些问题:
 
-* 安全升级组件定义的同时维护向下兼容性.
-* 跨平台共享组件的类型定义.
-* 在运行时的事件响应,如点击按钮或用户输入
-* 多个 JSON 驱动页面间跳转的同时,维护内部状态.
-* 构建时没有实现的自定义组件的渲染.我们正在尝试使用[Lona](https://github.com/airbnb/Lona/)解决.
+- 安全升级组件定义的同时维护向下兼容性.
+- 跨平台共享组件的类型定义.
+- 在运行时的事件响应,如点击按钮或用户输入
+- 多个 JSON 驱动页面间跳转的同时,维护内部状态.
+- 构建时没有实现的自定义组件的渲染.我们正在尝试使用[Lona](https://github.com/airbnb/Lona/)解决.
 
 服务器端渲染框架使我们能够更方便的进行试验以及热更新,为我们提供了巨大的价值.
 
@@ -205,8 +207,6 @@ _这是 Airbnb 关于 React Native 经验分享和移动端未来计划系列文
 
 [第五篇: What's Next for Mobile](../Airbnb%20的%20React%20Native%20实践：%20移动端发展计划/README.md)
 
-* 原文地址：https://medium.com/airbnb-engineering/whats-next-for-mobile-at-airbnb-5e71618576ab
-* 译文出自：TWNTF
-* 译者：Yingjian Li
-
-
+- 原文地址：https://medium.com/airbnb-engineering/whats-next-for-mobile-at-airbnb-5e71618576ab
+- 译文出自：TWNTF
+- 译者：Yingjian Li

@@ -1,8 +1,8 @@
-| Time | Tags |
-|--|--|
-| 2 | 3 |
+| Date       | Tags         |
+| ---------- | ------------ |
+| 2018-07-18 | React-Native |
 
-*****
+---
 
 # [翻译]Airbnb 的 React Native 实践： 概述
 
@@ -43,8 +43,6 @@ _这是 Airbnb 关于 React Native 经验分享和移动端未来计划系列文
 
 [第五部分](../Airbnb%20的%20React%20Native%20实践：%20移动端发展计划/README.md)中, 利用我们在 React Native 上积累的经验,使原生变得更好.
 
-
-* 原文地址：https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c
-* 译文出自：TWNTF
-* 译者：Yingjian Li
-
+- 原文地址：https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c
+- 译文出自：TWNTF
+- 译者：Yingjian Li
