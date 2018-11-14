@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const summary = require("./summary.json");
 
 module.exports = {
