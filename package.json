@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "generate-summary": "node scripts/pre-build",
+    "dev": "yarn generate-summary && next dev",
+    "build": "yarn generate-summary && next build",
     "export": "next export",
     "start": "serve out/"
   },
