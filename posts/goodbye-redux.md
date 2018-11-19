@@ -18,7 +18,7 @@ _完整分析我们过去为什么需要 Redux，以及为什么我们不再需�
 
 在最初的几个前端框架（最著名的应该是 AngularJS， Backbone 和 Ember）出现之前，我们曾经在服务器端渲染模板，然后将整个 HTML 页面发送给浏览器。当时流行的框架包括：
 
-![](images/template-frameworks.png)
+![](/static/template-frameworks.png)
 
 - Django(Python) — 2005 年 7 月 21 日正式发布；~距今 13 年。
 - Ruby on Rails — 2005 年 12 月 13 日正式发布； ~距今 13 年。
@@ -34,7 +34,7 @@ _完整分析我们过去为什么需要 Redux，以及为什么我们不再需�
 
 突然之间，人们开始意识到 JavaScript 强大的功能，只需要一点点代码就可以完成大量的工作。这也让其他开发者了解到了 JavaScript 的可能性。人们不仅开始为 Node.js 构建更多强大的工具，同时还开始创造有趣的前端框架。未来几年中 JavaScript 发展的雪球就是从这时开始的。
 
-![](images/node-frameworks.png)
+![](/static/node-frameworks.png)
 
 - Express.js(后端） — 2010 年 11 月 16 日正式发布； ~距今 8 年。
 - Backbone.js(前端） — 2010 年 10 月 12 日正式发布； ~距今 8 年。
@@ -51,7 +51,7 @@ _完整分析我们过去为什么需要 Redux，以及为什么我们不再需�
 
 Facebook 迅速发展，成为了全球最大的 web 应用。你可以想象，作为最大的 web 应用会遇到很多的挑战。其中最头痛的就是如何在页眉中正确展示通知的数量。
 
-![](images/facebook-notifications.jpeg)
+![](/static/facebook-notifications.jpeg)
 
 随着人们大量的使用 Facebook 应用，人们期望应用中的通知应该能够正确更新。但通常情况下却不是这样的。我不清楚你是否在那个时候使用过 Facebook 或者是否还记得，但是这些通知经常是错的... 问题出在对于 web 应用来说很难识别出应用中某一部分的改变（阅读消息）并且影响应用的另一部分（减少未读消息数）。
 
