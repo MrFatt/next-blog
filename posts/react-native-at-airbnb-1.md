@@ -35,13 +35,13 @@ _这是 Airbnb 关于 React Native 经验分享和移动端未来计划系列文
 
 不同的团队在 React Native 方面拥有广泛的经验。React Native 有时表现得十分出色,而有时会造成一些技术上和组织上的问题. 在本系列文章中, 我们详细介绍了我们的经验以及我们接下来的计划。
 
-[第二部分](../Airbnb%20的%20React%20Native%20实践：%20技术细节/README.md)中, 我们列举了技术方面上 React Native 优点和缺陷.
+[第二部分](./react-native-at-airbnb-2)中, 我们列举了技术方面上 React Native 优点和缺陷.
 
-[第三部分](../Airbnb%20的%20React%20Native%20实践：%20构建一个跨平台的移动端团队/README.md)中, 我们列举了在构建跨平台移动端团队中的组织方面的问题
+[第三部分](./react-native-at-airbnb-3)中, 我们列举了在构建跨平台移动端团队中的组织方面的问题
 
-[第四部分](../Airbnb%20的%20React%20Native%20实践：%20弃用%20React%20Native/README.md)中, 我们重点展示了我们对 React Native 的看法以及 Airbnb 未来的发展方向.
+[第四部分](./react-native-at-airbnb-4)中, 我们重点展示了我们对 React Native 的看法以及 Airbnb 未来的发展方向.
 
-[第五部分](../Airbnb%20的%20React%20Native%20实践：%20移动端发展计划/README.md)中, 利用我们在 React Native 上积累的经验,使原生变得更好.
+[第五部分](./react-native-at-airbnb-5)中, 利用我们在 React Native 上积累的经验,使原生变得更好.
 
 - 原文地址：https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c
 - 译文出自：TWNTF

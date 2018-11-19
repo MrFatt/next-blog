@@ -71,15 +71,15 @@ Android 和 iOS 已有 10 年历史,而且有数百万的工程师贡献于学�
 
 _这是 Airbnb 关于 React Native 经验分享和移动端未来计划系列文章的第三篇._
 
-[第一篇: React Native at Airbnb](../Airbnb%20的%20React%20Native%20实践：%20概述/README.md)
+[第一篇: React Native at Airbnb](./react-native-at-airbnb-1)
 
-[第二篇: The Technology](../Airbnb%20的%20React%20Native%20实践：%20技术细节/README.md)
+[第二篇: The Technology](./react-native-at-airbnb-2)
 
-[第三篇: Building a Cross-Platform Mobile Team](../Airbnb%20的%20React%20Native%20实践：%20构建一个跨平台的移动端团队/README.md)
+[第三篇: Building a Cross-Platform Mobile Team](./react-native-at-airbnb-3)
 
-[第四篇: Making a Decision on React Native](../Airbnb%20的%20React%20Native%20实践：%20弃用%20React%20Native/README.md)
+[第四篇: Making a Decision on React Native](./react-native-at-airbnb-4)
 
-[第五篇: What's Next for Mobile](../Airbnb%20的%20React%20Native%20实践：%20移动端发展计划/README.md)
+[第五篇: What's Next for Mobile](./react-native-at-airbnb-5)
 
 - 原文地址：https://medium.com/airbnb-engineering/building-a-cross-platform-mobile-team-3e1837b40a88
 - 译文出自：TWNTF
