@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-
+const compareDesc = require('date-fns/compare_desc')
 const getTitle = content => /#(.*)/g.exec(content)[1].trim();
 
 const getMetaInfo = post => {
@@ -30,6 +30,8 @@ postNames.map(name => {
     tag: tagName,
     date
   });
+
+  summary.posts.sort((a,b)=>compareDesc(a.date,b.date))
 
   if (summary.tags.find(tag => tag.name === tagName)) {
     summary.tags.find(tag => tag.name === tagName).count++;
