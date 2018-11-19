@@ -14,7 +14,7 @@ class Tags extends Component {
     const {
       query: { tag }
     } = props;
-    const filteredPosts = summary.posts.filter(post => post.tag === tag);
+    const filteredPosts = summary.posts.filter(post => post.tag.includes(tag));
     return { filteredPosts, tag };
   }
 
@@ -56,6 +56,8 @@ class Tags extends Component {
             margin-left: 20px;
           }
           .post-title:hover {
+            color: blue;
+            opacity: 0.6;
             cursor: pointer;
           }
         `}</style>

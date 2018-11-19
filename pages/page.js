@@ -25,7 +25,7 @@ class Page extends Component {
         return { key: key, content: post.default };
       })
     );
-    return { posts, filteredPosts};
+    return { posts, filteredPosts };
   }
 
   render() {
@@ -52,7 +52,6 @@ class Page extends Component {
           <SideBar tags={tags} />
         </div>
         <style global jsx>{`
-
           .home-container {
             display: flex;
             justify-content: space-between;

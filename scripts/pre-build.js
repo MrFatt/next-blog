@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const compareDesc = require('date-fns/compare_desc')
+const compareDesc = require("date-fns/compare_desc");
+
 const getTitle = content => /#(.*)/g.exec(content)[1].trim();
 
 const getMetaInfo = post => {
@@ -12,7 +13,14 @@ const getMetaInfo = post => {
 
   return keys.reduce(
     (acc, cur, index) =>
-      Object.assign(acc, cur ? { [cur]: values[index] } : {}),
+      Object.assign(
+        acc,
+        cur
+          ? cur === "tag"
+            ? { [cur]: values[index].split(",") }
+            : { [cur]: values[index] }
+          : {}
+      ),
     {}
   );
 };
@@ -23,21 +31,23 @@ let summary = { posts: [], tags: [] };
 
 postNames.map(name => {
   const content = fs.readFileSync(path.resolve(__dirname, `../posts/${name}`));
-  const { tag: tagName, date } = getMetaInfo(content);
+  const { tag: tagNames, date } = getMetaInfo(content);
   summary.posts.push({
     key: name.replace(".md", ""),
     title: getTitle(content),
-    tag: tagName,
+    tag: tagNames,
     date
   });
 
-  summary.posts.sort((a,b)=>compareDesc(a.date,b.date))
+  summary.posts.sort((a, b) => compareDesc(a.date, b.date));
 
-  if (summary.tags.find(tag => tag.name === tagName)) {
-    summary.tags.find(tag => tag.name === tagName).count++;
-  } else {
-    summary.tags.push({ name: tagName, count: 1 });
-  }
+  tagNames.map(tagName => {
+    if (summary.tags.find(tag => tag.name === tagName)) {
+      summary.tags.find(tag => tag.name === tagName).count++;
+    } else {
+      summary.tags.push({ name: tagName, count: 1 });
+    }
+  });
 });
 
 fs.writeFileSync(
