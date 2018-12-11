@@ -4,7 +4,8 @@
     "dev": "yarn generate-summary && next dev",
     "build": "yarn generate-summary && next build",
     "export": "next export",
-    "start": "serve out/"
+    "start": "serve out/",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "date-fns": "^1.29.0",
