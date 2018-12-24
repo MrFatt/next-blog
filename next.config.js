@@ -1,6 +1,7 @@
 const summary = require("./summary.json");
 
 module.exports = {
+  assetPrefix: process.env.NODE_ENV === "production" ? "/next-blog" : "",
   exportPathMap: () => {
     const postRoutes = summary.posts.reduce(
       (acc, { key }) =>
@@ -27,14 +28,16 @@ module.exports = {
 
     const { tags } = summary;
 
-    const tagsRouter = tags.reduce((acc, { name }) => 
-      Object.assign({}, acc, {
-        [`/tags/${name}`]: {
-          page: "/tags",
-          query: { tag: name }
-        }
-      }), {});
-
+    const tagsRouter = tags.reduce(
+      (acc, { name }) =>
+        Object.assign({}, acc, {
+          [`/tags/${name}`]: {
+            page: "/tags",
+            query: { tag: name }
+          }
+        }),
+      {}
+    );
 
     setTimeout(() => {}, 10000);
     return {
