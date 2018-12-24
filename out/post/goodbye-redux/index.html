@@ -1,0 +1,157 @@
+<!DOCTYPE html><html style="height:100%" class="jsx-3241352696"><head><meta charSet="utf-8" class="next-head"/><title class="next-head">Next-blog</title><link rel="preload" href="/next-blog/_next/static/_Xkg0yA~Q0WYPVU~iQ0xS/pages/post.js" as="script"/><link rel="preload" href="/next-blog/_next/static/_Xkg0yA~Q0WYPVU~iQ0xS/pages/_app.js" as="script"/><link rel="preload" href="/next-blog/_next/static/_Xkg0yA~Q0WYPVU~iQ0xS/pages/_error.js" as="script"/><link rel="preload" href="/next-blog/_next/static/runtime/webpack-bf0647fcc5634d05e2c1.js" as="script"/><link rel="preload" href="/next-blog/_next/static/chunks/commons.97c2b46aeb269f21d96b.js" as="script"/><link rel="preload" href="/next-blog/_next/static/runtime/main-8c21d63e457d27dcf8e4.js" as="script"/><style id="__jsx-3241352696">div#__next{height:100%;}</style><style id="__jsx-821146791">a.jsx-821146791{margin-right:30px;font-size:20px;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;color:rgba(0,0,0,0.7);}</style><style id="__jsx-1769670723">header.jsx-1769670723{box-shadow:0 0 1px rgba(0,0,0,0.2);-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;}
+.header-container.jsx-1769670723{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 auto;padding-top:20px;max-width:1000px;padding-bottom:20px;}
+div.slogan.jsx-1769670723{display:inline-block;font-weight:bold;font-size:24px;font-family:"Oswald",sans-serif;}
+a.jsx-1769670723{-webkit-text-decoration:none;text-decoration:none;cursor:pointer;color:rgba(0,0,0,0.7);}</style><style id="__jsx-3564541774">img{max-width:900px;}
+blockquote{padding:0 1em;color:#6a737d;border-left:0.25em solid #dfe2e5;margin-left:0;margin-bottom:16px;margin-top:0;}
+p,li{word-wrap:break-word;font-size:18px;line-height:1.58;-webkit-letter-spacing:-0.003em;-moz-letter-spacing:-0.003em;-ms-letter-spacing:-0.003em;letter-spacing:-0.003em;}
+p>code{padding:0.2em 0.4em;margin:0;font-size:85%;border-radius:3px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo, Courier,monospace;}
+pre{margin-top:0;margin-bottom:0;}
+pre>code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo, Courier,monospace;line-height:1.45;}</style><style id="__jsx-1732950521">.footer-container.jsx-1732950521{height:40px;margin-top:40px;background-color:black;}
+.footer-content.jsx-1732950521{color:white;max-width:1000px;font-family:"Oswald",sans-serif;margin:10px auto;line-height:1.5;}
+a.jsx-1732950521{margin-left:5px;color:white;}</style><style id="__jsx-2994019239">.jsx-2994019239{font-family:"Open Sans","Roboto","Microsoft YaHei","微软雅黑",STXihei, "华文细黑",sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:auto;}
+.content-container.jsx-2994019239{margin-top:50;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;}
+.content.jsx-2994019239{margin:0 auto;max-width:1000px;height:100%;min-height:650px;}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans:300,400,500" class="jsx-3241352696"/><link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" class="jsx-3241352696"/><link href="/static/dracula.css" rel="stylesheet" class="jsx-3241352696"/><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" class="jsx-3241352696"></script><script class="jsx-3241352696">hljs.initHighlightingOnLoad();</script></head><body style="height:100%;margin:0" class="jsx-3241352696"><div id="__next"><div class="jsx-2994019239"><header class="jsx-1769670723"><div class="jsx-1769670723 header-container"><div class="jsx-1769670723 slogan"><a class="jsx-1769670723" href="/next-blog/">Star Boy</a></div><div class="jsx-821146791"><a class="jsx-821146791" href="/next-blog/page/">Home</a><a class="jsx-821146791" href="/next-blog/about/">About</a></div></div></header><div class="jsx-2994019239 content-container"><div class="jsx-2994019239 content"><div class="jsx-3564541774"><h1>[翻译]再见了, Redux</h1>
+<p><em>完整分析我们过去为什么需要 Redux，以及为什么我们不再需要它的原因。</em></p>
+<p>在过去的几年中，互联网技术已经向前端 JavaScript 框架转移，以提高 Web 和移动应用的用户体验。这太棒了 🔥，我个人十分喜欢这些框架的灵活性。</p>
+<blockquote>
+<p>但是，太灵活了…</p>
+</blockquote>
+<p>为了真正理解出现这种情况的原因，让我们回拨一下时间，看看应用程序在 JavaScript 框架存在之前是如何构建的。</p>
+<h2>⏳，在 JavaScript 之前</h2>
+<p>在最初的几个前端框架（最著名的应该是 AngularJS， Backbone 和 Ember）出现之前，我们曾经在服务器端渲染模板，然后将整个 HTML 页面发送给浏览器。当时流行的框架包括：</p>
+<p><img src="/next-blog/static/template-frameworks.png" alt=""></p>
+<ul>
+<li>Django(Python) — 2005 年 7 月 21 日正式发布；~距今 13 年。</li>
+<li>Ruby on Rails — 2005 年 12 月 13 日正式发布； ~距今 13 年。</li>
+<li>Symphony(PHP) — 2005 年十月 22 日正式发布； ~距今 13 年。</li>
+</ul>
+<p>这些框架的核心概念都是 MVC，也就是 Model-View—Controller 的应用开发结构。Models 是数据的『结构』，views 是『展示』数据的模板， controllers 负责将其『连接』。</p>
+<blockquote>
+<p>这个时候当然也是有 JavaScript 的，只不过是一些像 jQuery 滑块以及一些实现弹跳动画的其他奇怪的库，这些都是完全没有必要的…</p>
+</blockquote>
+<p>总的来说，使用这些框架构建的 App 表现得相当不错，但还是会有一些问题。 然后有一天，Ryan Dahl 灵光一闪，不再仅仅将 JavaScript 作为完成动画效果的工具。他开发了第一版的 Node.js， 使得开发者能够在浏览器外以及服务器端使用 JavaScript。</p>
+<ul>
+<li>Node.js — 2009 年 5 月 27 日正式发布；~距今 9 年。</li>
+</ul>
+<p>突然之间，人们开始意识到 JavaScript 强大的功能，只需要一点点代码就可以完成大量的工作。这也让其他开发者了解到了 JavaScript 的可能性。人们不仅开始为 Node.js 构建更多强大的工具，同时还开始创造有趣的前端框架。未来几年中 JavaScript 发展的雪球就是从这时开始的。</p>
+<p><img src="/next-blog/static/node-frameworks.png" alt=""></p>
+<ul>
+<li>Express.js(后端） — 2010 年 11 月 16 日正式发布； ~距今 8 年。</li>
+<li>Backbone.js(前端） — 2010 年 10 月 12 日正式发布； ~距今 8 年。</li>
+<li>AngularJS(前端） — 2010 年 10 月 20 日正式发布； ~距今 8 年。</li>
+<li>Ember.js(前端） — 2011 年 12 月 8 日正式发布； ~距今 7 年。</li>
+</ul>
+<p>这使得 App 开发的方式发生了重大转变。之前完全由服务器进行处理的 MVC 结构被分成了两部分——处理 MC（models 和 controllers）的服务器，以及使用上述 JavaScript 框架处理 view 的前端客户端。在一些早期的框架中，view 中仍然包含 models 和 controllers。两份 model 和 controllers，有些在前端，有些在后端 — 听起来需要很多的代码。🙇🏽‍</p>
+<h2>🤦‍，Facebook 的问题</h2>
+<p>每个人都很开心。一切都正常运行而且易于理解，只需要花费几个小时来学习。</p>
+<blockquote>
+<p>然后情况发生了变化</p>
+</blockquote>
+<p>Facebook 迅速发展，成为了全球最大的 web 应用。你可以想象，作为最大的 web 应用会遇到很多的挑战。其中最头痛的就是如何在页眉中正确展示通知的数量。</p>
+<p><img src="/next-blog/static/facebook-notifications.jpeg" alt=""></p>
+<p>随着人们大量的使用 Facebook 应用，人们期望应用中的通知应该能够正确更新。但通常情况下却不是这样的。我不清楚你是否在那个时候使用过 Facebook 或者是否还记得，但是这些通知经常是错的… 问题出在对于 web 应用来说很难识别出应用中某一部分的改变（阅读消息）并且影响应用的另一部分（减少未读消息数）。</p>
+<p>这并不是最糟糕的事 — 这可以通过重载页面来解决 — 但 Facebook 拥有超过 1000 个充满热情的员工，并决定是时候做些事情了。因此他们重新思考了前端框架如何处理信息并且决定创造一个他们自己的前端框架；React。</p>
+<ul>
+<li>React（前端） — 2013 年 3 月正式发布； ~距今 5 年。</li>
+</ul>
+<p>这个新框架在渲染 HTML 方面的表现十分出色，而且十分原始，没有很多关于『如何』开发应用方面的内容。同样地，他们还发布了 Flux，最终发展成了 Redux（Redo-Flux）。下面是 Flux 网站上 2014/2015 年的视频。<a href="https://youtu.be/nYkdrAPrdcw">这个视频</a>主要讲解 Flux 和 React。</p>
+<h2>🍐…两者结合了</h2>
+<p>Redux 的工作方式是将应用中所有的动态信息存储到一个 JavaScript 对象中。当应用中的某部分需要展示数据时，它需要向服务器请求信息，更新 JavaScript 对象，最后将数据展示给用户。将所有信息存储到一个地方，应用总能正确地展示信息。因此解决了 Facebook 的通知问题。</p>
+<p>突如其来地，React Redux 成为了构建应用的一个新框架。Facebook 努力解决了他们的问题，而且大家都很开心，对不对？</p>
+<p>✋<strong>并不。</strong></p>
+<p>问题是，大家（包括我）开始使用一个对象存储所有的信息 — 服务器提供的全部数据。这确实可以维护所欲数据的最新状态，但是也有下面的三个问题：</p>
+<ol>
+<li>需要花费<strong>大量的</strong>额外代码，这将花费你的大部分<strong>时间</strong>。</li>
+<li>将所有代码放到一个地方，也会带来『数据过期』的问题，也就是说应用中可能出现来自之前状态的过期数据。</li>
+<li>对于新开发者来说，学习曲线陡峭，新手前端 web 开发人员很难采用这种技术。</li>
+</ol>
+<p>如果我们设法将一个向用户展示数据的简单任务，从 2005 年的 MVC 框架中的模板迁移到现在的大型前端应用中，那么前端代码量是后端的 10 倍。例如我最近开发了一个简单的应用，并用<a href="https://wakatime.com/">WakaTime</a>来测量我编程的时间。结果如下：</p>
+<ul>
+<li>React Redux 前端代码库 — 32 小时。</li>
+<li>Express + Mongoose 后端代码库 — 4 小时。</li>
+</ul>
+<p>认真的吗？？🤯 我在前端代码上花费的时间是后端的 8 倍。让我们来看看为什么会需要这么多的代码。下面是我在前端代码库中添加基本的信息抓取请求时，需要的步骤：</p>
+<pre><code>🚧 警告：下面的内容技术性较强，请自由阅读。
+</code></pre>
+<ol>
+<li>创建一个组件来展示用户列表（没有任何问题）。</li>
+<li>创建一个<code>fetch</code>请求 API。</li>
+<li>在 state 中添加新字段。</li>
+<li>添加一个更新 state 中数据的 action。</li>
+<li>添加一个 thunk 方法，来执行 <code>fetch</code> 并且用 action 来更新 state。</li>
+<li>使用 <code>connect()</code> 将 thunk 方法添加到组件中。</li>
+<li>再次使用 <code>connect()</code>，从 Redux state 中抽取数据。</li>
+<li>在组件的属性类型中声明 thunk 方法和抽取的数据。</li>
+<li>在 <code>componentDidMount()</code> 中调用 thunk 方法。</li>
+<li>最终在 DOM 中渲染数据。</li>
+</ol>
+<p>我的老天鹅…10 步…想当年使用 Ruby on Rails 的时候，我只需要把数据传给 HTML 就可以了。最后的结果是完全一样的。我意识到是时候做出一些改变了。</p>
+<h2>☝️，一个新方案</h2>
+<p>Redux 在解决前端应用同步的问题上十分出色，但是也带来一些其他的问题（像上面提到的）。仔细思考一下，Redux 给我们带来了什么额外的功能？</p>
+<blockquote>
+<p>本质上来说，我们只是解决了一些不重要的问题。</p>
+</blockquote>
+<p>Facebook 也已经注意到了这一点，并且开始使用 GraphQL 这样的新技术来解决这个问题。GraphQL 在当时是一个时髦的词，但我不清楚大家是否真的知道其中的<strong>原因</strong>。</p>
+<p>GraphQL 与 Redux <strong>完全</strong>不同。Facebook 再一次推出了一款令人惊叹的产品，但是没能表述清楚为什么这款产品如此重要；所以我需要花费几分钟说明一下上下文。</p>
+<blockquote>
+<p>总的来说，GraphQL 是汽车而 Redux 是马。</p>
+</blockquote>
+<p><strong>什么？Redux 怎么会是马？</strong></p>
+<p>我将两种技术描述成马和汽车的原因是；你不可能认为马和汽车是相似的 — 一个是四条腿的动物而另一个是装着轮子的机器。然而他们的最终目的都相同，都是将人送到终点。汽车在公路上行驶并需要燃料，然而马可以跨过岩石。他们各自的优势不同，适用场景也不同，但一般来说；汽车比马要快。</p>
+<p><strong>那么，GraphQL 是什么</strong></p>
+<p>官方文档将 GraphQL 描述为『GraphQL 是 API 的查询语言』十分模糊。本质上说，这里查询语言的意思是将一个 API 替换成了上百个 HTTP 端点。因为这个技术目前还不成熟，文档和支持还是有些难理解；也就是说还有一定的学习曲线。下面是一个例子。</p>
+<p>GraphQL 将会替代下面的端点：</p>
+<ul>
+<li>GET <code>/user/1234567890</code></li>
+<li>POST <code>/cars</code></li>
+<li>PUT <code>/examples/endpoints</code></li>
+</ul>
+<p>还有只查询所需信息的自定义的查询，例如：</p>
+<pre><code>{
+  user(id: &quot;1234567890&quot;) {
+    name,
+    email
+  }
+}
+</code></pre>
+<p>将会返回：</p>
+<pre><code>{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Luke Skywalker&quot;,
+    &quot;email&quot;: &quot;luke@iamyourfather.com&quot;
+  }
+}
+</code></pre>
+<p>等一下 — 自定义查询… 岂不是需要花很长时间来实现。 ~那只是你的想法</p>
+<p>事实并非如此。原因是；当只请求需要的数据时，不再需要生成那么多的服务器请求，也就意味着你不需要写那么多的代码来处理这些请求。因此，您最终会在不必实现的代码上节省大量时间。</p>
+<p><strong>🤷‍ 但这如何取代 Redux 呢？</strong></p>
+<p>又一个好问题，感谢提问。简单来说，<strong>不会取代</strong> Redux。然而它却<em>鼓励</em>你<em>不要</em>将所有信息存在 Redux 提供的对象中。这是因为自定义查询不是为整个应用设计的，而是为特定部分设计的。在应用程序范围的数据源中存储特定部分的数据是一种反模式（也不符合逻辑）。</p>
+<blockquote>
+<p>通过 GraphQL，可以减少对 Redux 的依赖，进而减少大量不必要的代码。</p>
+</blockquote>
+<p>还值得注意的是；Redux 和 GraphQL 可以在一个应用中共存。这对于现有的 Redux 应用中集成 GraphQL 来说很有帮助。下面是关于如何实现的<a href="https://s3.amazonaws.com/apollo-docs-1.x/redux.html">文档</a>。</p>
+<p>在解决小问题时，Redux 成为了一个备选项。你可以选择使用它，但这同时会增加开销并引入其他问题，或者你也可以选择使用其他技术。</p>
+<p><strong>好的，那么我们用什么技术呢？</strong></p>
+<p>当时，Redux 是解决问题的好办法。但是随着 Web 开发的发展突飞猛进，web socket 领域也随之不断发展。</p>
+<p>Web socket 是客户端与服务端间开放的连接，所以服务端可以通知客户端何时进行特定的更新。你猜怎么着？GraphQL 以订阅的形式直接支持 Web socket。因此，我们可以使用订阅来更新我们应用中希望保持同步的部分。</p>
+<p>这其中最大的区别是；不在需要客户端来通知我们某些组件需要更新（通过 Redux），而是我们的服务器通知客户端来更新数据。这两种方式的结果是一样的。下面是使用 MongoDB 和 Mongoose 实现 web socket 或订阅的例子。</p>
+<p><a href="http://thecodebarbarian.com/a-nodejs-perspective-on-mongodb-36-change-streams.html">A Node.js Perspective on MongoDB 3.6: Change Streams</a></p>
+<p><a href="https://mongoosejs.com/docs/api.html#model_Model.watch">Mongoose v5.2.13: API docs</a></p>
+<h2>🚀，未来看起来很美好！</h2>
+<p>GraphQL 已经开发了一段时间，但现在处于可以在生产中使用的阶段。坦白的说，它的文档非常难以理解，需要事先了解 JavaScript 以及服务器的工作方式。但是，如果你还不是很清楚 - 至少你知道目标是什么。这是一个常用教程的<a href="https://graphql.org/learn/">链接</a>。</p>
+<p>还有许多有用的库可以帮助你完成 GraphQL 的集成工作。别担心，你不必一次性的完成所有工作，这些库可以帮助你逐渐完成迁移。<a href="https://www.apollographql.com/">Apollo</a> 是在这方便做的相当不错的一家公司。</p>
+<p>就是这样。我希望这篇文章对于你理解这些复杂的概念有所帮助。</p>
+<p>如果你喜欢这篇文章，你可以<strong>鼓鼓掌</strong> — 这对我来说很重要 — 或者如果你有任何的问题，欢迎留言！</p>
+<p>谢谢！🙌</p>
+<p>你也可以关注我的<a href="https://twitter.com/jacrobsco">推特</a> 🦉 或者… 看看我其他的博客：</p>
+<ul>
+<li><a href="https://medium.com/@jackrobertscott/startup-productivity-guide-101-85afdcf463fc">Startup Productivity Guide 101</a></li>
+<li><a href="https://medium.com/@jackrobertscott/startup-validation-done-right-6c7c62229e9">How I Launched a Startup in 4 Days</a></li>
+<li><a href="https://medium.com/@jackrobertscott/getting-your-first-100-startup-customers-8cafd0ee8e7d">Getting Your First 100 Startup Customers</a></li>
+</ul>
+<ul>
+<li>原文地址：<a href="https://hackernoon.com/goodbye-redux-26e6a27b3a0b">https://hackernoon.com/goodbye-redux-26e6a27b3a0b</a></li>
+<li>译文出自：TWNTF</li>
+<li>译者：Yingjian Li</li>
+</ul>
+</div></div></div><footer style="flex:0 0 auto" class="jsx-1732950521"><div class="jsx-1732950521 footer-container"><div class="jsx-1732950521 footer-content">© 2018 Yingjian Li. Powered by:<a href="https://nextjs.org/" class="jsx-1732950521">Next.js</a>. Inspired by<a href="https://github.com/frostfan/hexo-theme-polarbear" class="jsx-1732950521">Polar Bear</a></div></div></footer></div></div><script>__NEXT_DATA__ = {"props":{"pageProps":{"content":"| date       | tag   |\n| ---------- | ----- |\n| 2018-09-18 | Redux |\n\n---\n\n# [翻译]再见了, Redux\n\n_完整分析我们过去为什么需要 Redux，以及为什么我们不再需要它的原因。_\n\n在过去的几年中，互联网技术已经向前端 JavaScript 框架转移，以提高 Web 和移动应用的用户体验。这太棒了 🔥，我个人十分喜欢这些框架的灵活性。\n\n\u003e 但是，太灵活了...\n\n为了真正理解出现这种情况的原因，让我们回拨一下时间，看看应用程序在 JavaScript 框架存在之前是如何构建的。\n\n## ⏳，在 JavaScript 之前\n\n在最初的几个前端框架（最著名的应该是 AngularJS， Backbone 和 Ember）出现之前，我们曾经在服务器端渲染模板，然后将整个 HTML 页面发送给浏览器。当时流行的框架包括：\n\n![](/static/template-frameworks.png)\n\n- Django(Python) — 2005 年 7 月 21 日正式发布；~距今 13 年。\n- Ruby on Rails — 2005 年 12 月 13 日正式发布； ~距今 13 年。\n- Symphony(PHP) — 2005 年十月 22 日正式发布； ~距今 13 年。\n\n这些框架的核心概念都是 MVC，也就是 Model-View—Controller 的应用开发结构。Models 是数据的『结构』，views 是『展示』数据的模板， controllers 负责将其『连接』。\n\n\u003e 这个时候当然也是有 JavaScript 的，只不过是一些像 jQuery 滑块以及一些实现弹跳动画的其他奇怪的库，这些都是完全没有必要的...\n\n总的来说，使用这些框架构建的 App 表现得相当不错，但还是会有一些问题。 然后有一天，Ryan Dahl 灵光一闪，不再仅仅将 JavaScript 作为完成动画效果的工具。他开发了第一版的 Node.js， 使得开发者能够在浏览器外以及服务器端使用 JavaScript。\n\n- Node.js — 2009 年 5 月 27 日正式发布；~距今 9 年。\n\n突然之间，人们开始意识到 JavaScript 强大的功能，只需要一点点代码就可以完成大量的工作。这也让其他开发者了解到了 JavaScript 的可能性。人们不仅开始为 Node.js 构建更多强大的工具，同时还开始创造有趣的前端框架。未来几年中 JavaScript 发展的雪球就是从这时开始的。\n\n![](/static/node-frameworks.png)\n\n- Express.js(后端） — 2010 年 11 月 16 日正式发布； ~距今 8 年。\n- Backbone.js(前端） — 2010 年 10 月 12 日正式发布； ~距今 8 年。\n- AngularJS(前端） — 2010 年 10 月 20 日正式发布； ~距今 8 年。\n- Ember.js(前端） — 2011 年 12 月 8 日正式发布； ~距今 7 年。\n\n这使得 App 开发的方式发生了重大转变。之前完全由服务器进行处理的 MVC 结构被分成了两部分——处理 MC（models 和 controllers）的服务器，以及使用上述 JavaScript 框架处理 view 的前端客户端。在一些早期的框架中，view 中仍然包含 models 和 controllers。两份 model 和 controllers，有些在前端，有些在后端 — 听起来需要很多的代码。🙇🏽‍\n\n## 🤦‍，Facebook 的问题\n\n每个人都很开心。一切都正常运行而且易于理解，只需要花费几个小时来学习。\n\n\u003e 然后情况发生了变化\n\nFacebook 迅速发展，成为了全球最大的 web 应用。你可以想象，作为最大的 web 应用会遇到很多的挑战。其中最头痛的就是如何在页眉中正确展示通知的数量。\n\n![](/static/facebook-notifications.jpeg)\n\n随着人们大量的使用 Facebook 应用，人们期望应用中的通知应该能够正确更新。但通常情况下却不是这样的。我不清楚你是否在那个时候使用过 Facebook 或者是否还记得，但是这些通知经常是错的... 问题出在对于 web 应用来说很难识别出应用中某一部分的改变（阅读消息）并且影响应用的另一部分（减少未读消息数）。\n\n这并不是最糟糕的事 — 这可以通过重载页面来解决 — 但 Facebook 拥有超过 1000 个充满热情的员工，并决定是时候做些事情了。因此他们重新思考了前端框架如何处理信息并且决定创造一个他们自己的前端框架；React。\n\n- React（前端） — 2013 年 3 月正式发布； ~距今 5 年。\n\n这个新框架在渲染 HTML 方面的表现十分出色，而且十分原始，没有很多关于『如何』开发应用方面的内容。同样地，他们还发布了 Flux，最终发展成了 Redux（Redo-Flux）。下面是 Flux 网站上 2014/2015 年的视频。[这个视频](https://youtu.be/nYkdrAPrdcw)主要讲解 Flux 和 React。\n\n## 🍐...两者结合了\n\nRedux 的工作方式是将应用中所有的动态信息存储到一个 JavaScript 对象中。当应用中的某部分需要展示数据时，它需要向服务器请求信息，更新 JavaScript 对象，最后将数据展示给用户。将所有信息存储到一个地方，应用总能正确地展示信息。因此解决了 Facebook 的通知问题。\n\n突如其来地，React Redux 成为了构建应用的一个新框架。Facebook 努力解决了他们的问题，而且大家都很开心，对不对？\n\n✋**并不。**\n\n问题是，大家（包括我）开始使用一个对象存储所有的信息 — 服务器提供的全部数据。这确实可以维护所欲数据的最新状态，但是也有下面的三个问题：\n\n1. 需要花费**大量的**额外代码，这将花费你的大部分**时间**。\n2. 将所有代码放到一个地方，也会带来『数据过期』的问题，也就是说应用中可能出现来自之前状态的过期数据。\n3. 对于新开发者来说，学习曲线陡峭，新手前端 web 开发人员很难采用这种技术。\n\n如果我们设法将一个向用户展示数据的简单任务，从 2005 年的 MVC 框架中的模板迁移到现在的大型前端应用中，那么前端代码量是后端的 10 倍。例如我最近开发了一个简单的应用，并用[WakaTime](https://wakatime.com/)来测量我编程的时间。结果如下：\n\n- React Redux 前端代码库 — 32 小时。\n- Express + Mongoose 后端代码库 — 4 小时。\n\n认真的吗？？🤯 我在前端代码上花费的时间是后端的 8 倍。让我们来看看为什么会需要这么多的代码。下面是我在前端代码库中添加基本的信息抓取请求时，需要的步骤：\n\n```\n🚧 警告：下面的内容技术性较强，请自由阅读。\n```\n\n1. 创建一个组件来展示用户列表（没有任何问题）。\n2. 创建一个`fetch`请求 API。\n3. 在 state 中添加新字段。\n4. 添加一个更新 state 中数据的 action。\n5. 添加一个 thunk 方法，来执行 `fetch` 并且用 action 来更新 state。\n6. 使用 `connect()` 将 thunk 方法添加到组件中。\n7. 再次使用 `connect()`，从 Redux state 中抽取数据。\n8. 在组件的属性类型中声明 thunk 方法和抽取的数据。\n9. 在 `componentDidMount()` 中调用 thunk 方法。\n10. 最终在 DOM 中渲染数据。\n\n我的老天鹅...10 步...想当年使用 Ruby on Rails 的时候，我只需要把数据传给 HTML 就可以了。最后的结果是完全一样的。我意识到是时候做出一些改变了。\n\n## ☝️，一个新方案\n\nRedux 在解决前端应用同步的问题上十分出色，但是也带来一些其他的问题（像上面提到的）。仔细思考一下，Redux 给我们带来了什么额外的功能？\n\n\u003e 本质上来说，我们只是解决了一些不重要的问题。\n\nFacebook 也已经注意到了这一点，并且开始使用 GraphQL 这样的新技术来解决这个问题。GraphQL 在当时是一个时髦的词，但我不清楚大家是否真的知道其中的**原因**。\n\nGraphQL 与 Redux **完全**不同。Facebook 再一次推出了一款令人惊叹的产品，但是没能表述清楚为什么这款产品如此重要；所以我需要花费几分钟说明一下上下文。\n\n\u003e 总的来说，GraphQL 是汽车而 Redux 是马。\n\n**什么？Redux 怎么会是马？**\n\n我将两种技术描述成马和汽车的原因是；你不可能认为马和汽车是相似的 — 一个是四条腿的动物而另一个是装着轮子的机器。然而他们的最终目的都相同，都是将人送到终点。汽车在公路上行驶并需要燃料，然而马可以跨过岩石。他们各自的优势不同，适用场景也不同，但一般来说；汽车比马要快。\n\n**那么，GraphQL 是什么**\n\n官方文档将 GraphQL 描述为『GraphQL 是 API 的查询语言』十分模糊。本质上说，这里查询语言的意思是将一个 API 替换成了上百个 HTTP 端点。因为这个技术目前还不成熟，文档和支持还是有些难理解；也就是说还有一定的学习曲线。下面是一个例子。\n\nGraphQL 将会替代下面的端点：\n\n- GET `/user/1234567890`\n- POST `/cars`\n- PUT `/examples/endpoints`\n\n还有只查询所需信息的自定义的查询，例如：\n\n```\n{\n  user(id: \"1234567890\") {\n    name,\n    email\n  }\n}\n```\n\n将会返回：\n\n```\n{\n  \"user\": {\n    \"name\": \"Luke Skywalker\",\n    \"email\": \"luke@iamyourfather.com\"\n  }\n}\n```\n\n等一下 — 自定义查询... 岂不是需要花很长时间来实现。 ~那只是你的想法\n\n事实并非如此。原因是；当只请求需要的数据时，不再需要生成那么多的服务器请求，也就意味着你不需要写那么多的代码来处理这些请求。因此，您最终会在不必实现的代码上节省大量时间。\n\n**🤷‍ 但这如何取代 Redux 呢？**\n\n又一个好问题，感谢提问。简单来说，**不会取代** Redux。然而它却*鼓励*你*不要*将所有信息存在 Redux 提供的对象中。这是因为自定义查询不是为整个应用设计的，而是为特定部分设计的。在应用程序范围的数据源中存储特定部分的数据是一种反模式（也不符合逻辑）。\n\n\u003e 通过 GraphQL，可以减少对 Redux 的依赖，进而减少大量不必要的代码。\n\n还值得注意的是；Redux 和 GraphQL 可以在一个应用中共存。这对于现有的 Redux 应用中集成 GraphQL 来说很有帮助。下面是关于如何实现的[文档](https://s3.amazonaws.com/apollo-docs-1.x/redux.html)。\n\n在解决小问题时，Redux 成为了一个备选项。你可以选择使用它，但这同时会增加开销并引入其他问题，或者你也可以选择使用其他技术。\n\n**好的，那么我们用什么技术呢？**\n\n当时，Redux 是解决问题的好办法。但是随着 Web 开发的发展突飞猛进，web socket 领域也随之不断发展。\n\nWeb socket 是客户端与服务端间开放的连接，所以服务端可以通知客户端何时进行特定的更新。你猜怎么着？GraphQL 以订阅的形式直接支持 Web socket。因此，我们可以使用订阅来更新我们应用中希望保持同步的部分。\n\n这其中最大的区别是；不在需要客户端来通知我们某些组件需要更新（通过 Redux），而是我们的服务器通知客户端来更新数据。这两种方式的结果是一样的。下面是使用 MongoDB 和 Mongoose 实现 web socket 或订阅的例子。\n\n[A Node.js Perspective on MongoDB 3.6: Change Streams](http://thecodebarbarian.com/a-nodejs-perspective-on-mongodb-36-change-streams.html)\n\n[Mongoose v5.2.13: API docs](https://mongoosejs.com/docs/api.html#model_Model.watch)\n\n## 🚀，未来看起来很美好！\n\nGraphQL 已经开发了一段时间，但现在处于可以在生产中使用的阶段。坦白的说，它的文档非常难以理解，需要事先了解 JavaScript 以及服务器的工作方式。但是，如果你还不是很清楚 - 至少你知道目标是什么。这是一个常用教程的[链接](https://graphql.org/learn/)。\n\n还有许多有用的库可以帮助你完成 GraphQL 的集成工作。别担心，你不必一次性的完成所有工作，这些库可以帮助你逐渐完成迁移。[Apollo](https://www.apollographql.com/) 是在这方便做的相当不错的一家公司。\n\n就是这样。我希望这篇文章对于你理解这些复杂的概念有所帮助。\n\n如果你喜欢这篇文章，你可以**鼓鼓掌** — 这对我来说很重要 — 或者如果你有任何的问题，欢迎留言！\n\n谢谢！🙌\n\n你也可以关注我的[推特](https://twitter.com/jacrobsco) 🦉 或者... 看看我其他的博客：\n\n- [Startup Productivity Guide 101](https://medium.com/@jackrobertscott/startup-productivity-guide-101-85afdcf463fc)\n- [How I Launched a Startup in 4 Days](https://medium.com/@jackrobertscott/startup-validation-done-right-6c7c62229e9)\n- [Getting Your First 100 Startup Customers](https://medium.com/@jackrobertscott/getting-your-first-100-startup-customers-8cafd0ee8e7d)\n\n* 原文地址：https://hackernoon.com/goodbye-redux-26e6a27b3a0b\n* 译文出自：TWNTF\n* 译者：Yingjian Li\n"}},"page":"/post","pathname":"/post","query":{"key":"goodbye-redux"},"buildId":"_Xkg0yA~Q0WYPVU~iQ0xS","assetPrefix":"/next-blog","runtimeConfig":{"backendUrl":"/next-blog"},"nextExport":true};__NEXT_LOADED_PAGES__=[];__NEXT_REGISTER_PAGE=function(r,f){__NEXT_LOADED_PAGES__.push([r, f])}</script><script async="" id="__NEXT_PAGE__/post" src="/next-blog/_next/static/_Xkg0yA~Q0WYPVU~iQ0xS/pages/post.js"></script><script async="" id="__NEXT_PAGE__/_app" src="/next-blog/_next/static/_Xkg0yA~Q0WYPVU~iQ0xS/pages/_app.js"></script><script async="" id="__NEXT_PAGE__/_error" src="/next-blog/_next/static/_Xkg0yA~Q0WYPVU~iQ0xS/pages/_error.js"></script><script src="/next-blog/_next/static/runtime/webpack-bf0647fcc5634d05e2c1.js" async=""></script><script src="/next-blog/_next/static/chunks/commons.97c2b46aeb269f21d96b.js" async=""></script><script src="/next-blog/_next/static/runtime/main-8c21d63e457d27dcf8e4.js" async=""></script></body></html>
