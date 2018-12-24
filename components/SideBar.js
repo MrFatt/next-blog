@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+const backendUrl = process.env.BACKEND_URL;
+
 export default props => (
   <div className="sidebar-container">
     <div className="sidebar-title">Tags:</div>

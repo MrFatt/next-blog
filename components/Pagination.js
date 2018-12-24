@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getPaginations } from "../utils";
 
+const backendUrl = process.env.BACKEND_URL;
+
 export default props => {
   const { pageCount, currentPage = 1 } = props;
   const paginationArray = getPaginations(pageCount, currentPage);

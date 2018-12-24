@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getTitle } from "../utils";
 import { sanitizePost, getPostSummary } from "../utils";
 
+const backendUrl = process.env.BACKEND_URL;
+
 const styles = {
   hover: {
     "&:hover": {

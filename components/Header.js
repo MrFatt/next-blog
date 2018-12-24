@@ -1,6 +1,8 @@
 import Navigation from "./Navigation";
 import Link from "next/link";
 
+const backendUrl = process.env.BACKEND_URL;
+
 export default () => {
   return (
     <header>
