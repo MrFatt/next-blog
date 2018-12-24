@@ -2,7 +2,7 @@ import Link from "next/link";
 import getConfig from "next/config";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 
 export default props => (

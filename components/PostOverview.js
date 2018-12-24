@@ -4,7 +4,7 @@ import { getTitle } from "../utils";
 import { sanitizePost, getPostSummary } from "../utils";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 
 const styles = {
@@ -45,19 +45,13 @@ export default props => {
     <div className="card-container">
       <div className="card">
         <div className="post-overview" style={styles.content}>
-          <Link
-            href={`${backendUrl}/post/${key}`}
-            as={`${backendUrl}/post/${key}`}
-          >
+          <Link href={`${backendUrl}/post/${key}`}>
             <a className="post-title">{postName}</a>
           </Link>
           <div className="post-content">
             {getPostSummary(sanitizePost(content))}
           </div>
-          <Link
-            href={`${backendUrl}/post/${key}`}
-            as={`${backendUrl}/post/${key}`}
-          >
+          <Link href={`${backendUrl}/post/${key}`}>
             <a className="read-more">Read more</a>
           </Link>
         </div>

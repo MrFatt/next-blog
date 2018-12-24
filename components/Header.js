@@ -3,7 +3,7 @@ import Link from "next/link";
 import getConfig from "next/config";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 
 export default () => {
@@ -11,7 +11,7 @@ export default () => {
     <header>
       <div className="header-container">
         <div className="slogan">
-          <Link as={`${backendUrl}/`} href={`${backendUrl}/page?cur=1`}>
+          <Link href={`${backendUrl}/page?cur=1`}>
             <a>Star Boy</a>
           </Link>
         </div>

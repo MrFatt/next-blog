@@ -2,13 +2,13 @@ import Link from "next/link";
 import getConfig from "next/config";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 
 const Navigation = () => {
   return (
     <div>
-      <Link as={`${backendUrl}/`} href={`${backendUrl}/page?cur=1`}>
+      <Link href={`${backendUrl}/page`}>
         <a>Home</a>
       </Link>
       <Link href={`${backendUrl}/about`}>

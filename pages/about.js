@@ -3,7 +3,7 @@ import MyLayout from "../components/MyLayout";
 import getConfig from "next/config";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 
 export default () => (

@@ -7,7 +7,7 @@ import MyLayout from "../components/MyLayout";
 import summary from "../summary.json";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 
 class Tags extends Component {
@@ -34,7 +34,7 @@ class Tags extends Component {
           {filteredPosts.map(post => (
             <div key={post.key} className="post">
               <span className="post-timestamp">{post.timestamp}</span>
-              <Link as={`/post/${post.key}`} href={`/post/${post.key}`}>
+              <Link href={`/post/${post.key}`}>
                 <span className="post-title">{post.title}</span>
               </Link>
             </div>

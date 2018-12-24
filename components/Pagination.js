@@ -3,7 +3,7 @@ import { getPaginations } from "../utils";
 import getConfig from "next/config";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 export default props => {
   const { pageCount, currentPage = 1 } = props;
