@@ -1,3 +1,9 @@
+import getConfig from "next/config";
+
+const {
+  serverRuntimeConfig: { backendUrl }
+} = getConfig();
+
 export const getTitle = content => /#(.*)/g.exec(content)[1];
 
 export const sanitizePost = post => /\-{3}\n(.*)/s.exec(post)[1];
@@ -16,6 +22,20 @@ export const getMetaInfo = post => {
   );
 };
 
+const replaceImageRefs = text => {
+  const imageRegex = new RegExp(/\!\[(.*)\]\(\/static\/(.*)\)/);
+  let imageExecArray = imageRegex.exec(text);
+
+  while (imageExecArray) {
+    text = text.replace(
+      imageExecArray[0],
+      `![${imageExecArray[1]}](/${backendUrl}/${imageExecArray[2]}/)`
+    );
+    imageExecArray = imageRegex.exec(text);
+  }
+  return text;
+};
+
 export const getPostSummary = content => {
   return content
     .slice(0, 900)
@@ -25,3 +45,5 @@ export const getPostSummary = content => {
     .replace(/\(http.*/, "")
     .trim();
 };
+
+export const formatText = text => replaceImageRefs(sanitizePost(text));

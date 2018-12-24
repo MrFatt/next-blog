@@ -1,7 +1,7 @@
 import { withRouter } from "next/router";
 import { Component } from "react";
 
-import {sanitizePost } from "../utils";
+import { formatText } from "../utils";
 import MyLayout from "../components/MyLayout";
 
 const markdownIt = require("markdown-it");
@@ -13,11 +13,11 @@ class Post extends Component {
   }
 
   static async getInitialProps(props) {
-    const content = await import(`../posts/${props.query.key}.md`)
+    const content = await import(`../posts/${props.query.key}.md`);
 
     return {
       content: content.default
-    }
+    };
   }
 
   render() {
@@ -35,7 +35,9 @@ class Post extends Component {
         return ""; // use external default escaping
       }
     };
-    const postHTML = markdownIt(markdownConfig).render(sanitizePost(this.props.content));
+    const postHTML = markdownIt(markdownConfig).render(
+      formatText(this.props.content)
+    );
 
     return (
       <MyLayout>

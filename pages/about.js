@@ -9,7 +9,7 @@ const {
 export default () => (
   <MyLayout>
     <div className="container">
-      <img className="avatar" src={`/static/avatar.jpeg`} />
+      <img className="avatar" src={`${backendUrl}/static/avatar.jpeg`} />
       <div className="introduce">
         <div className="name">
           Yingjian Li
