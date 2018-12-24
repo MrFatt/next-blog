@@ -1,7 +1,7 @@
 import getConfig from "next/config";
 
 const {
-  serverRuntimeConfig: { backendUrl }
+  publicRuntimeConfig: { backendUrl }
 } = getConfig();
 
 export const getTitle = content => /#(.*)/g.exec(content)[1];
