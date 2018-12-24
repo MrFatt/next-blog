@@ -8,7 +8,7 @@ const {
 const Navigation = () => {
   return (
     <div>
-      <Link href={`${backendUrl}/page`}>
+      <Link href={`${backendUrl}/`}>
         <a>Home</a>
       </Link>
       <Link href={`${backendUrl}/about`}>
