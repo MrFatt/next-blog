@@ -1,6 +1,8 @@
 const summary = require("./summary.json");
 
 module.exports = {
+  assetPrefix: process.env.NODE_ENV === "production" ? "/next-blog" : "",
+
   serverRuntimeConfig: {
     // Will only be available on the server side
     backendUrl: process.env.NODE_ENV === "production" ? "/next-blog" : ""
