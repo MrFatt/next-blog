@@ -11,7 +11,7 @@ export default () => {
     <header>
       <div className="header-container">
         <div className="slogan">
-          <Link href={`${backendUrl}/page?cur=1`}>
+          <Link href={`${backendUrl}/`}>
             <a>Star Boy</a>
           </Link>
         </div>
