@@ -23,13 +23,13 @@ export const getMetaInfo = post => {
 };
 
 const replaceImageRefs = text => {
-  const imageRegex = new RegExp(/\!\[(.*)\]\(\/static\/(.*)\)/);
+  const imageRegex = new RegExp(/\!\[(.*)\]\((\/static\/.*)\)/);
   let imageExecArray = imageRegex.exec(text);
 
   while (imageExecArray) {
     text = text.replace(
       imageExecArray[0],
-      `![${imageExecArray[1]}](/${backendUrl}/${imageExecArray[2]})`
+      `![${imageExecArray[1]}](/${backendUrl}${imageExecArray[2]})`
     );
     imageExecArray = imageRegex.exec(text);
   }
