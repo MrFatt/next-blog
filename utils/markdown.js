@@ -29,7 +29,7 @@ const replaceImageRefs = text => {
   while (imageExecArray) {
     text = text.replace(
       imageExecArray[0],
-      `![${imageExecArray[1]}](/${backendUrl}/${imageExecArray[2]}/)`
+      `![${imageExecArray[1]}](/${backendUrl}/${imageExecArray[2]})`
     );
     imageExecArray = imageRegex.exec(text);
   }
