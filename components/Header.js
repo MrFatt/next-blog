@@ -1,7 +1,10 @@
 import Navigation from "./Navigation";
 import Link from "next/link";
+import getConfig from "next/config";
 
-const backendUrl = process.env.BACKEND_URL;
+const {
+  serverRuntimeConfig: { backendUrl }
+} = getConfig();
 
 export default () => {
   return (

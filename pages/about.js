@@ -1,7 +1,11 @@
 import Link from "next/link";
 import MyLayout from "../components/MyLayout";
+import getConfig from "next/config";
 
-const backendUrl = process.env.BACKEND_URL;
+const {
+  serverRuntimeConfig: { backendUrl }
+} = getConfig();
+
 export default () => (
   <MyLayout>
     <div className="container">

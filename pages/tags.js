@@ -1,11 +1,14 @@
 import { Component } from "react";
 import { withRouter } from "next/router";
 import Link from "next/link";
+import getConfig from "next/config";
 
 import MyLayout from "../components/MyLayout";
 import summary from "../summary.json";
 
-const backendUrl = process.env.BACKEND_URL;
+const {
+  serverRuntimeConfig: { backendUrl }
+} = getConfig();
 
 class Tags extends Component {
   constructor() {
@@ -31,10 +34,7 @@ class Tags extends Component {
           {filteredPosts.map(post => (
             <div key={post.key} className="post">
               <span className="post-timestamp">{post.timestamp}</span>
-              <Link
-                as={`${backendUrl}/post/${post.key}`}
-                href={`${backendUrl}/post/${post.key}`}
-              >
+              <Link as={`/post/${post.key}`} href={`/post/${post.key}`}>
                 <span className="post-title">{post.title}</span>
               </Link>
             </div>
