@@ -5,6 +5,8 @@ import Link from "next/link";
 import MyLayout from "../components/MyLayout";
 import summary from "../summary.json";
 
+const backendUrl = process.env.BACKEND_URL;
+
 class Tags extends Component {
   constructor() {
     super(...arguments);
@@ -29,7 +31,10 @@ class Tags extends Component {
           {filteredPosts.map(post => (
             <div key={post.key} className="post">
               <span className="post-timestamp">{post.timestamp}</span>
-              <Link as={`/post/${post.key}`} href={`/post/${post.key}`}>
+              <Link
+                as={`${backendUrl}/post/${post.key}`}
+                href={`${backendUrl}/post/${post.key}`}
+              >
                 <span className="post-title">{post.title}</span>
               </Link>
             </div>

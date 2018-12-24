@@ -6,7 +6,7 @@ export default () => {
     <header>
       <div className="header-container">
         <div className="slogan">
-          <Link as="/" href="/page?cur=1">
+          <Link as={`${backendUrl}/`} href={`${backendUrl}/page?cur=1`}>
             <a>Star Boy</a>
           </Link>
         </div>

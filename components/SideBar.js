@@ -5,7 +5,7 @@ export default props => (
     <div className="sidebar-title">Tags:</div>
     {props.tags.map((tag, index) => (
       <div className="sidebar-tag" key={`tag-${index}`}>
-        <Link href={`/tags/${tag.name}`}>
+        <Link href={`${backendUrl}/tags/${tag.name}`}>
           <a>{`${tag.name}  (${tag.count})`}</a>
         </Link>
       </div>

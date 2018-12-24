@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MyLayout from "../components/MyLayout";
 
+const backendUrl = process.env.BACKEND_URL;
 export default () => (
   <MyLayout>
     <div className="container">
@@ -10,17 +11,23 @@ export default () => (
           Yingjian Li
           <Link href="https://github.com/MrFatt">
             <a target="_blank">
-              <img className="logo" src="/static/GitHub-logo.png" />
+              <img
+                className="logo"
+                src={`${backendUrl}/static/GitHub-logo.png`}
+              />
             </a>
           </Link>
           <Link href="mailto://mrfatlee5@gmail.com">
             <a target="_blank">
-              <img className="logo" src="/static/mail-logo.png" />
+              <img
+                className="logo"
+                src={`${backendUrl}/static/mail-logo.png`}
+              />
             </a>
           </Link>
         </div>
         <div className="location-container">
-          <img className="location" src="/static/locate.png" />
+          <img className="location" src={`${backendUrl}/static/locate.png`} />
           Xi'an
         </div>
         <div className="bio">

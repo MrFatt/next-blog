@@ -3,10 +3,10 @@ import Link from "next/link";
 const Navigation = () => {
   return (
     <div>
-      <Link as="/" href="/page?cur=1">
+      <Link as={`${backendUrl}/`} href={`${backendUrl}/page?cur=1`}>
         <a>Home</a>
       </Link>
-      <Link href={`/about`}>
+      <Link href={`${backendUrl}/about`}>
         <a>About</a>
       </Link>
       <style jsx>{`
